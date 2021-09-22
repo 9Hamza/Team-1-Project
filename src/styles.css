@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-feldgrau {
+    background-color:rgb(67, 101, 91);
+}
+
+.font-RobotoMono {
+    font-family: Roboto Mono, monospace;
+    font-size: 1em;
+}
