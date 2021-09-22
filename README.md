@@ -1,8 +1,7 @@
 # Team-1-Project
-<<<<<<< HEAD
-This project is a movie reccomendation web app that is being developed by Team 1.
-=======
 
+This project is a movie reccomendation web app that is being developed by Team 1.
+<hr>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
 ## Development server
@@ -28,4 +27,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
->>>>>>> c4a5c86 (Create angular project. Add and modify components for different sections in index.html.)
