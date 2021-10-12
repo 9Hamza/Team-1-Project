@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  //not sure why but apparently we need this here and below?
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyA6wysJumCIVKXjoDlPlxC7OBHeugPbTZ8",
+    authDomain: "moodstream-a3a53.firebaseapp.com",
+    projectId: "moodstream-a3a53",
+    storageBucket: "moodstream-a3a53.appspot.com",
+    messagingSenderId: "866038229156",
+    appId: "1:866038229156:web:6e562487f846a1846a1e31",
+    measurementId: "G-5H38BLNMKE"
+  }
 };
 
 // Your web app's Firebase configuration

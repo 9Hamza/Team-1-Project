@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+//import { AngularFireDatabaseModule } from 'angularfire2';
+//import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +22,10 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    //AngularFireDatabaseModule,
+    //AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
