@@ -1,4 +1,5 @@
-<button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign
+<!-- First Attempt of Sign Up Page 
+    <button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign
     Up</button>
 
 <div id="id01" class="modal">
@@ -29,7 +30,53 @@
             </div>
         </div>
     </form>
+</div> -->
+
+<!-- Using Angular Material & Routing -->
+
+<div class="container">
+    <button mat-raised-button color="primary" routerLink="">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+    </button>
+    <mat-card class="d-flex justify-content-center">
+        <form [formGroup]="signupForm" (ngSubmit)="signup()">
+            <p class="mat-form-field-outline-start">
+                <mat-form-field appearance="outline">
+                    <mat-label>Full Name</mat-label>
+                    <br>
+                    <input autocomplete="off" formControlName="displayName" type="text" matInput placeholder="Display Name">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" type="email" matInput placeholder="Email">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <br>
+                    <input autocomplete="off" formControlName="password" type="password" matInput placeholder="Password">
+                </mat-form-field>
+            </p>
+            <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+                <span>{{ firebaseErrorMessage }}</span>
+            </div>
+    
+            <button mat-raised-button color="primary">Signup</button>
+        </form>
+    </mat-card>
+    
+    <div class="progressIndicator" [style.display]="isProgressVisible ? 'inline' : 'none' ">
+        <mat-progress-spinner class=" example-margin" color="primary" mode="indeterminate"></mat-progress-spinner>
+    </div>
 </div>
+
+
+<div class="container my-4"></div>
+
 
 <script>
     var modal = document.getElementById('id01'); // Get the modal
