@@ -39,7 +39,6 @@ function getMovies(searchText){
   });
 }
 
-
 function movieSelected(id){
   sessionStorage.setItem('movieID', id);
   window.location = 'movie.html';
