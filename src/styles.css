@@ -1,12 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 
 .bg-feldgrau {
-    background-color: rgb(67, 101, 91);
+  background-color: rgb(67, 101, 91);
 }
 
 .font-RobotoMono {
-    font-family: Roboto Mono, monospace;
-    font-size: 1em;
+  font-family: Roboto Mono, monospace;
+  font-size: 1em;
 }
-/* html, body { height: 100%; } */
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* From Dyllan's Branch */
+#movies img,
+#movie img {
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+}
+#movies .col-md-3 .well {
+  height: 390px;
+}
+
+#movies .col-md-3 img {
+  height: 240px;
+}
