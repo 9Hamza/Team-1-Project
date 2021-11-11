@@ -46,7 +46,7 @@
                 </button></li>
                 <li><button *ngIf="!(afAuth.user | async)" mat-raised-button color="primary" routerLink="/signup">
                     <mat-icon>person_add</mat-icon>
-                    <span>Sign up</span>
+                    <span>Sign Up</span>
                 </button></li>
                 <!-- WAS IN home.component.html -->
                 
@@ -56,11 +56,11 @@
     <div class="d-flex justify-content-end">
         <mat-card *ngIf="(afAuth.user | async)">
             <mat-icon>check_circle</mat-icon>
-            <span>Logged In</span>
+            <span></span>
         </mat-card>
         <mat-card *ngIf="!(afAuth.user | async)">
             <mat-icon>do_not_disturb</mat-icon>
-            <span>Not Logged In</span>
+            <span></span>
         </mat-card>
     </div>
 </nav>

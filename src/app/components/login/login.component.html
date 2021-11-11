@@ -1,62 +1,12 @@
-<!-- Main Container
 <div class="container">
-
-    Grid Row
-    <div class="row my-5">
-        <div class="col-5">1 of 2</div>
-        <div class="col">2 of 2</div>
-    </div>
-
-    Grid Row
-    <div class="row my-5">
-        col-5
-        <div class="col-5">
-            <img class="img-fluid" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80" alt="login">
-        </div>
-        col
-        <div class="col">
-            <form action="action_page.php" method="post">
-
-                <div class="container">
-
-                    <div class="row">
-                        <div class="col-2"><label for="uname"><b>Username</b></label></div>
-                        <div class="col"><input type="text" placeholder="Enter Username" name="uname" required></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-2"><label for="psw"><b>Password</b></label></div>
-                        <div class="col"><input type="password" placeholder="Enter Password" name="psw" required></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-2"><button type="submit">Login</button></div>
-                        <div class="col"><label>
-                            <input type="checkbox" checked="checked" name="remember"> Remember me
-                          </label></div>
-                    </div>
-
-                    <div class="mt-2 row">
-                        <div class="col-2"><button type="button" class="cancelbtn">Cancel</button></div>
-                        <div class="col"><span class="psw">Forgot <a href="#">password?</a></span></div>
-                    </div>
-                </div>
-
-
-            </form>
-        </div>
-    </div>
-
-    Grid Row
-    
-</div> -->
-<div class="container">
-    <div class="row my-2"></div>
+    <div class="row my-5"></div>
+    <div class="row my-5"></div>
+    <div class="row my-4"></div>
     <button mat-raised-button color="primary" routerLink="">
         <mat-icon>home</mat-icon>
         <span>Home</span>
     </button>
-    
+
     <mat-card class="d-flex justify-content-center">
         <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
             <p>
@@ -68,19 +18,22 @@
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input autocomplete="off" formControlName="password" type="password" matInput placeholder="Password">
+                    <input autocomplete="off" formControlName="password" type="password" matInput
+                        placeholder="Password">
                 </mat-form-field>
             </p>
             <div *ngIf="firebaseErrorMessage != ''" class="error-style">
                 <span>{{ firebaseErrorMessage }}</span>
             </div>
-    
+
             <button mat-raised-button color="primary">Login</button>
         </form>
     </mat-card>
-    
+
     <!-- <div class="progressIndicator" [style.display]="isProgressVisible ? 'inline' : 'none' ">
         <mat-progress-spinner class=" example-margin" color="primary" mode="indeterminate"></mat-progress-spinner>
     </div> -->
+    <div class="row my-5"></div>
+    <div class="row my-5"></div>
     <div class="row my-5"></div>
 </div>
