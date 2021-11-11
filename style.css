@@ -1,0 +1,19 @@
+#movies img, #movie img{
+  width:100%;
+}
+
+#logo {
+  border-radius: 9px;
+  width: 42px;
+  height: 42px;
+}
+
+@media(min-width:960px){}
+  #movies .col-md-3 .well{
+    height: 390px;
+  }
+
+  #movies .col-md-3 img{
+    height:240px;
+  }
+}
