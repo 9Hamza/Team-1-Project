@@ -9,20 +9,46 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   userLoggedIn: boolean;      // other components can check on this variable for the login status of the user
+  userID: string;
+  email: string | null;
 
   constructor(private router: Router, private afAuth: AngularFireAuth, private afs: AngularFirestore) {
     this.userLoggedIn = false;
+    this.userID = "emptyID";
+    this.email = "emptyEmail";
 
     this.afAuth.onAuthStateChanged((user) => {              // set up a subscription to always know the login status of the user
       if (user) {
         this.userLoggedIn = true;
+        this.userID = user.uid;
+        this.email = user.email;
+        console.log(user.displayName);                      // prints null 
+        console.log(user.email);                            // prints actual email
+        console.log(this.userID);
       } else {
         this.userLoggedIn = false;
       }
     });
+
+  }
+
+
+  onReadCollect(email:string) {
+    this.afs.collection("users", ref => ref.where("email", "==", email)).get().subscribe( snaps => {
+      snaps.forEach( snap => {
+        this.userID = snap.id;
+          // console.log(snap.id);
+          // console.log(snap.data());
+      })
+  })
+  }
+
+  getEmail() {
+    return this.email;
   }
 
   loginUser(email: string, password: string): Promise<any> {
+    this.onReadCollect(email);
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then(() => {
         console.log('Auth Service: loginUser: success');
@@ -77,4 +103,9 @@ export class AuthService {
       });
   }
 
+  getAll(){
+    this.afs.collection('users').snapshotChanges().subscribe((response) => {
+      console.log('response', response);
+    })
+  }
 }

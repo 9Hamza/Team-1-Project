@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   firebaseErrorMessage: string;
 
-  constructor(private authService: AuthService, private router: Router, private afAuth: AngularFireAuth) {
+  constructor(private authService: AuthService, private router: Router, private afAuth: AngularFireAuth, private afs: AngularFirestore) {
 
       this.isProgressVisible = false;
 
@@ -53,5 +55,14 @@ export class LoginComponent implements OnInit {
       });
   }
   
+  // Reads the collection "users" in our database
+  onReadCollection(){
+      this.afs.collection("users").get().subscribe( snaps => {
+          snaps.forEach( snap => {
+              console.log(snap.id);
+              console.log(snap.data());
+          })
+      })
+  }
 }
 

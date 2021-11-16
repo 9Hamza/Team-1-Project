@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +11,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public afAuth: AngularFireAuth, private firestore: AngularFirestore) {
+  constructor(public afAuth: AngularFireAuth, private firestore: AngularFirestore, private router: Router) {
 
   }
 
@@ -20,6 +22,8 @@ export class NavbarComponent implements OnInit {
   logout(): void {
       this.afAuth.signOut();
       console.log('User is signed out.');
+      this.router.navigate(['']);
+
   }
 
 }
