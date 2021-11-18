@@ -1,0 +1,41 @@
+#movies img, #movie img, #show img{
+  border-radius: 9px;
+  width:100%;
+}
+
+#logo {
+  border-radius: 9px;
+  width: 42px;
+  height: 42px;
+}
+
+#profile {
+  border-radius: 9px;
+  width: 138px;
+  height: 175px;
+}
+
+@media(min-width:960px){}
+  #movies .col-md-3 .well{
+    height: 390px;
+  }
+
+  #movies .col-md-3 img{
+    height:240px;
+  }
+
+  #poster {
+    height: 240px;
+    width: 160px;
+  }
+
+  .scrolling-wrapper {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    color: rgb(241, 21, 21);
+  }
+  .card {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+  }
