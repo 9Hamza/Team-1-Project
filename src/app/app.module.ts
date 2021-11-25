@@ -57,6 +57,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
+import { MoodComponent } from './components/mood/mood.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { SearchComponent } from './components/search/search.component';
     LoginComponent,
     HomeComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    MoodComponent
   ],
   imports: [
     BrowserModule,
