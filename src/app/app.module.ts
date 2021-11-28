@@ -14,6 +14,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SearchComponent } from './components/search/search.component';
+import { MoodComponent } from './components/mood/mood.component';
+import { SearchFunctionComponent } from './search-function/search-function.component';
+
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -55,9 +60,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { ProfileComponent } from './components/profile/profile.component';
-import { SearchComponent } from './components/search/search.component';
-import { MoodComponent } from './components/mood/mood.component';
+
 
 @NgModule({
   declarations: [
@@ -70,10 +73,14 @@ import { MoodComponent } from './components/mood/mood.component';
     HomeComponent,
     ProfileComponent,
     SearchComponent,
-    MoodComponent
+    MoodComponent,
+    SearchFunctionComponent,
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path: 'search', component: SearchComponent},
+    ]),
     AppRoutingModule,
     BrowserAnimationsModule,
 

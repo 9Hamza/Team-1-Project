@@ -32,7 +32,7 @@ function getMovies(searchText){
       `;
     });
 
-    $('#movies.component').html(output);
+    $('#movie.component').html(output);
   })
   .catch((err) => {
     console.log(err);
