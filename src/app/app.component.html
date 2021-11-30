@@ -1,5 +1,100 @@
-<main class="bg-feldgrau">
-    <app-navbar></app-navbar>
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE LIST</title>
+    <link rel="stylesheet" href="app.component.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+        <span>M</span>
+        <span>O</span>
+        <span>O</span>
+        <span>D</span>
+        <span>S</span>
+        <span>T</span>
+        <span>R</span>
+        <span>E</span>
+        <span>A</span>
+        <span>M</span>
+        </div>
+        <ul>
+            <li class="active"> MOVIE LIST</li>
+            <li>HOME</li>
+            <li>SEARCH</li>
+            <li>USER</li>
+        </ul>
+    </header>
+    <section>
+        <img src="./../assets/stars.png" alt="" class="stars">
+        <img src="./../assets/moon.png" alt="" class="moon">
+        <div class="desc">MOOD STREAM</div>
+        <a href="#title" class="btn">GO TO MY MOVIE LIST</a>
+        <img src="./../assets/mountains_behind.png" alt="" class="mountains_behind">
+        <img src="./../assets/mountains_front.png" alt="" class="mountains_front">
+    </section>
+    <script>
+        const stars = document.querySelector('.stars');
+        const moon = document.querySelector('.moon');
+        const desc = document.querySelector('.desc');
+        const btn = document.querySelector('.btn');
+        const mountains_behind = document.querySelector('.mountains_behind');
+        const mountains_front = document.querySelector('.mountains_front');
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            desc.style.marginTop = value * 1.5 + "px";
+            desc.style.marginRight = value * 2.5 + "px";
+            btn.style.marginTop = value * 1.5 + "px";
+        })
+    </script>
+    <div class="text" id="title">
+        <h3>RECOMMANDED FOR YOU</h3>
+        <div class="MOVIE2">
+          <img src="./../assets/movie2.jpg">
+        </div>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
+        <h2>MY LIST</h2>
+        <p>MOVIE 1
+        </p>
+        <div class="MOVIE">
+          <img src="./../assets/MOVIE.jpg">
+        </div>
+        <br/><br/>
+        <p>MOVIE 2
+        </p>
+        <div class="MOVIE">
+          <img src="./../assets/MOVIE.jpg">
+        </div>
+        <br/><br/>
+        <p>MOVIE 3
+        </p>
+        <div class="MOVIE">
+          <img src="./../assets/MOVIE.jpg">
+        </div>
+        <br/><br/>
+        <p>MOVIE 4
+        </p>
+        <div class="MOVIE">
+          <img src="./../assets/MOVIE.jpg">
+        </div>
+        <br/><br/>
+        <p>MOVIE 5
+        </p>
+        <div class="MOVIE">
+          <img src="./../assets/MOVIE.jpg">
+        </div>
+        <br/><br/>
+    </div>
+</body>
+
+</html>

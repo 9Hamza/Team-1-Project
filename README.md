@@ -1,8 +1,6 @@
-# Team-1-Project
+# P1
 
-This project is a movie reccomendation web app that is being developed by Team 1.
-<hr>
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
 ## Development server
 
