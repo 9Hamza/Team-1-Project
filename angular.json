@@ -34,7 +34,8 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/js/search-function.js"
+              "src/assets/js/search-function.js",
+			  "node_modules/axios/dist/axios.min.js"
             ]
           },
           "configurations": {
@@ -107,7 +108,8 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", 
               "node_modules/jquery/dist/jquery.min.js",
-              "src/assets/js/search-function.js"
+              "src/assets/js/search-function.js",
+			  "node_modules/axios/dist/axios.min.js"
             ]
           }
         }

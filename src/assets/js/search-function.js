@@ -32,7 +32,10 @@ function getMovies(searchText){
       `;
     });
 
-    $('#movie.component').html(output);
+
+
+    //$('#search-function.component').html(output);
+    //document.getElementById('movies').append(output);
   })
   .catch((err) => {
     console.log(err);
@@ -53,7 +56,7 @@ function getMovie(){
     console.log(response);
     let movie = response.data;
 
-    genreList = '';
+    var genreList = '';
     $.each(movie.genres, function(n, obj){
       genreList+=obj['name'] + ', ';
     });
