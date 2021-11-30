@@ -80,6 +80,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     BrowserModule,
     RouterModule.forRoot([
       {path: 'search', component: SearchComponent},
+      //{path: 'movie', component: MovieComponent},
     ]),
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -87,6 +88,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+
+    HttpClientModule,
 
     MatAutocompleteModule,
     MatBadgeModule,
