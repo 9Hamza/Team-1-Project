@@ -1,11 +1,6 @@
-<<<<<<< Updated upstream
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-=======
-import { Component, ElementRef, OnInit } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { Router } from '@angular/router';
->>>>>>> Stashed changes
 import { HttpClientModule } from  '@angular/common/http';
 import { AxiosInstance } from "axios";
 import { Inject }  from '@angular/core';
@@ -13,46 +8,19 @@ import { DOCUMENT } from '@angular/common';
 import * as $ from "jquery";
 import axios from "axios";
 
-
 @Component({
-  selector: 'app-search-function',
-  templateUrl: './search-function.component.html',
-  template: '<a (click)="movieSelected()" class="btn btn-primary">Movie Details</a>',
-  styleUrls: ['./search-function.component.css']
+  selector: 'app-movie-page',
+  templateUrl: './movie-page.component.html',
+  styleUrls: ['./movie-page.component.css']
 })
+export class MoviePageComponent implements OnInit {
 
-
-export class SearchFunctionComponent implements OnInit {
-
-
-<<<<<<< Updated upstream
-  constructor(@Inject(DOCUMENT) document) {
-=======
-
-  movieSelected(id) {
-    sessionStorage.setItem('movieID', id);
-
-    //window.location = 'movie.component.html';    //used to to display individual movie page
-    //router.navigate
-    console.log(id);
-    this.router.navigate(['/movie']);
-
-    return false;
-    }
-
-
-
-  constructor(@Inject(DOCUMENT) document, private router: Router, private elRef: ElementRef) {
->>>>>>> Stashed changes
+  constructor(@Inject(DOCUMENT) document, private router: Router) {
   const IMG_URL = 'https://image.tmdb.org/t/p/w500'
   const API_KEY = '?api_key=ea13feb29808cba44ae41a961107c167'
   const URL = 'https://api.themoviedb.org/3/movie/'
 
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
   $(document).ready(() => {
     $('#searchForm').on('submit', (e) => {
     let searchText = $('#searchText').val();
@@ -61,11 +29,6 @@ export class SearchFunctionComponent implements OnInit {
     })
   });
 
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
   function getMovies(searchText){
     axios.get('https://api.themoviedb.org/3/search/movie?api_key=ea13feb29808cba44ae41a961107c167&query='+searchText)
     .then((response) => {
@@ -82,11 +45,7 @@ export class SearchFunctionComponent implements OnInit {
             <div class="well text-center">
               <img src="${moviePoster}">
               <h5>${movie.title}</h5>
-<<<<<<< Updated upstream
               <a onclick="movieSelected('${movie.id}')" class="btn btn-primary" href="#">Movie Details</a>
-=======
-              <a (click)="movieSelected('${movie.id}')" class="btn btn-primary">Movie Details</a>
->>>>>>> Stashed changes
             </div>
           </div>
         `;
@@ -95,10 +54,6 @@ export class SearchFunctionComponent implements OnInit {
 
       document.getElementById('movies').innerHTML= output;
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     })
     .catch((err) => {
       console.log(err);
@@ -108,19 +63,14 @@ export class SearchFunctionComponent implements OnInit {
 
 
 
-  function movieSelected(id){
+  /*function movieSelected(id){
     sessionStorage.setItem('movieID', id);
 
     //window.location = 'movie.component.html';    //used to to display individual movie page
-    //router.navigate
-<<<<<<< Updated upstream
-=======
-    console.log("Clicked");
     router.navigate(['/movie']);
->>>>>>> Stashed changes
 
     return false;
-  }
+  }*/
 
   function getMovie(){
     let movieID = sessionStorage.getItem('movieID');
@@ -166,11 +116,7 @@ export class SearchFunctionComponent implements OnInit {
             ${movie.overview}
             <hr>
             <a href="${movie.homepage}" target="_blank" class="btn btn-primary">View Creator Page</a>
-<<<<<<< Updated upstream
             <a href="index.html" class="btn btn-default">Go Back To Search</a>
-=======
-            <a href="movie-page.component.html" class="btn btn-default">Go Back To Search</a>
->>>>>>> Stashed changes
           </div>
         </div>
       `;
@@ -182,8 +128,8 @@ export class SearchFunctionComponent implements OnInit {
     });
   } }
 
-  ngOnInit(): void {
 
+  ngOnInit(): void {
   }
 
 }

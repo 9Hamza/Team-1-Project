@@ -34,7 +34,10 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
+<<<<<<< Updated upstream
               "src/assets/js/search-function.js",
+=======
+>>>>>>> Stashed changes
 			  "node_modules/axios/dist/axios.min.js"
             ]
           },
@@ -108,7 +111,10 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", 
               "node_modules/jquery/dist/jquery.min.js",
+<<<<<<< Updated upstream
               "src/assets/js/search-function.js",
+=======
+>>>>>>> Stashed changes
 			  "node_modules/axios/dist/axios.min.js"
             ]
           }

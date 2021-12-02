@@ -18,6 +18,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 import { MoodComponent } from './components/mood/mood.component';
 import { SearchFunctionComponent } from './search-function/search-function.component';
+import { MoviePageComponent } from './movie-page/movie-page.component';
 
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -62,6 +63,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,12 +77,17 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     SearchComponent,
     MoodComponent,
     SearchFunctionComponent,
+    MoviePageComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: 'search', component: SearchComponent},
+<<<<<<< Updated upstream
       //{path: 'movie', component: MovieComponent},
+=======
+      {path: 'movie', component: MoviePageComponent},
+>>>>>>> Stashed changes
     ]),
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -133,6 +140,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     //AngularFireDatabaseModule,
     //AngularFireAuthModule
   ],
+    exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
