@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+// import { getAuth, updateProfile } from "firebase/auth";
+
 
 @Component({
     selector: 'app-sign-up',
@@ -29,7 +31,7 @@ export class SignUpComponent implements OnInit {
             'displayName': new FormControl('', Validators.required),
             'email': new FormControl('', [Validators.required, Validators.email]),
             'password': new FormControl('', Validators.required)
-        });
+        });  
     }
 
     signup() {
@@ -48,4 +50,17 @@ export class SignUpComponent implements OnInit {
             this.isProgressVisible = false;
         });
     }
+
+    // _updateUserData(){
+    //     var userNow = this.afAuth.currentUser;
+    //       userNow.updateProfile({
+    //       displayName: "Jane Q. User",
+    //       photoURL: "https://example.com/jane-q-user/profile.jpg"
+    //     }).then(function() {
+    //       var displayName = userNow.displayName;
+    //       var photoURL = userNow.photoURL;
+    //     }, function(error) {
+  
+    //     });
+    // }
 }

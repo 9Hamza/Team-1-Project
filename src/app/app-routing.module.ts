@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'search', component: SearchFunctionComponent },
+  { path: 'search', component: SearchComponent, pathMatch: 'full'},
   { path: 'mood' , component: MoodComponent },
 ];
 

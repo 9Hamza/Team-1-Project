@@ -1,14 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthService } from 'src/app/services/auth.service';
+import { getDatabase } from 'firebase/database'
 
-interface User {
-  accountType: string;
-  displayName: string;
-  displayName_lower: string;
-  email: string | null;
-  email_lower: string;
-}
+
+// interface User {
+//   accountType: string;
+//   displayName: string;
+//   displayName_lower: string;
+//   email: string | null;
+//   email_lower: string;
+// }
+
+import { getAuth } from "firebase/auth";
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+
 
 @Component({
   selector: 'app-profile',
@@ -16,9 +23,9 @@ interface User {
   styleUrls: ['./profile.component.css']
 })
 
-export class ProfileComponent implements OnInit, User {
+export class ProfileComponent implements OnInit {
 
-  constructor(private afs: AngularFirestore, private as: AuthService) { }
+  constructor(private db: AngularFireDatabase, public auth:AngularFireAuth, private afs: AngularFirestore, private as: AuthService) { }
 
   accountType = '';
   displayName= '';
@@ -28,8 +35,13 @@ export class ProfileComponent implements OnInit, User {
   userID = '';
 
   ngOnInit(): void {
+    const auth = getAuth();
+    const user = auth.currentUser;
     this.email = this.as.getEmail();
-    console.log(this.as.getEmail());
+    console.log(this.as.getAll());
+    console.log(auth.currentUser?.displayName);
+
+
   }
 
   onReadCollectEach() {
