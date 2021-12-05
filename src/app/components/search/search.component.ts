@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiCallsService } from 'src/app/services/api-calls.service';
 
 
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -13,55 +14,27 @@ const URL = 'https://api.themoviedb.org/3/movie/';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private http: HttpClient) { 
+  movies: any = [];
+  movie: any = {};
+  isdetail = false;
+  genreList = 'test123123123';
 
-    // $(document).ready(() => {
-    //   $('#searchForm').on('submit', (e) => {
-      // let searchText = $('#searchText').val();
-      
-    //     e.preventDefault();
-    //   })
-    // });
+  constructor(private apiService: ApiCallsService, private router: Router) { }
 
+  ngOnInit(): void { }
 
-  }
-  listX: any;
-  ngOnInit(): void {
-    // this.getMovies().subscribe(data => {
-    //   this.listX = data;
-    // });
-    console.log(this.getMovies());
+  getMovies(event: Event){
+    this.apiService.searchMovies((<HTMLInputElement>event.target).value).subscribe( (response: any) => {
+      this.movies = response.results;
+      console.log(this.movies)
+    })
   }
 
-  getMovies(){
-    return this.http.get('https://api.themoviedb.org/3/search/movie?api_key=ea13feb29808cba44ae41a961107c167&query=yo');
-    // .then((response:any) => {
-    //   console.log(response);
-    //   let movies = response.data.results;
-    //   let output = '';
-    //   $.each(movies, (index, movie) => {
-    //     output += `
-    //       <div class="col-md-3">
-    //         <div class="well text-center">
-    //           <img src="${IMG_URL+movie.poster_path}" alt="NoImage.jpg">
-    //           <h5>${movie.title}</h5>
-    //           <a onclick="movieSelected('${movie.id}')" class="btn btn-primary" href="#">Movie Details</a>
-    //         </div>
-    //       </div>
-    //     `;
-    //   });
-  
-    //   $('#movies').html(output);
-    // })
-    // .catch((err:any) => {
-    //   console.log(err);
-    // });
+  movieSelected(id: number) {
+    this.apiService.movieDetails(id).subscribe( (response:any) => {
+      this.movie = response;
+      this.isdetail = true;
+    })
   }
 
 }
-
-// function movieSelected(id){
-//   sessionStorage.setItem('movieID', id);
-//   window.location = 'movie.html';
-//   return false;
-// }

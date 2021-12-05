@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
+
+  
   userLoggedIn: boolean;      // other components can check on this variable for the login status of the user
   userID: string;
   email: string | null;
