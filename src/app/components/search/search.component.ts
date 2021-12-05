@@ -16,6 +16,10 @@ export class SearchComponent implements OnInit {
 
   movies: any = [];
   movie: any = {};
+  providers: any = [];
+  provider: any = {};
+  casts: any=[];
+  cast: any={};
   isdetail = false;
   genreList = 'test123123123';
 
@@ -34,6 +38,15 @@ export class SearchComponent implements OnInit {
     this.apiService.movieDetails(id).subscribe( (response:any) => {
       this.movie = response;
       this.isdetail = true;
+    })
+
+    this.apiService.watchFeature(id).subscribe( (response:any) => {
+      this.providers = response.results.US.buy;
+    })
+
+    this.apiService.getCast(id).subscribe( (response:any) => {
+      this.casts = response.cast;
+      console.log(response);
     })
   }
 
