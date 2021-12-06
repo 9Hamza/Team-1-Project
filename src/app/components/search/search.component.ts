@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
   casts: any=[];
   cast: any={};
   isdetail = false;
-  genreList = 'test123123123';
 
   constructor(private apiService: ApiCallsService, private router: Router) { }
 
@@ -50,4 +49,5 @@ export class SearchComponent implements OnInit {
     })
   }
 
+  
 }

@@ -1,155 +1,173 @@
 <div class="row my-5"></div>
 <div class="row my-5"></div>
-<div class="row my-4"></div>
 
-<div class="my-2 text-center">
 
-    <!-- Row -->
-    <div class="mx-2 mb-1 row">
+<div *ngIf="canSeeMoods">
+    <div class="row my-4"></div>
+    <div class="my-2 text-center">
 
-        <div class="justify-content-center bg-light mr-1 card col">
-            <div class="box">
-                <div class="content">
-                    <h2>Sad</h2>
-                    <!-- <h3>Sad</h3> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
-                        inventore?</p>
-                    <!-- <a href="#">Read More</a> -->
-                    <div class="mb-1">
-                        <button type="button" class="px-1 btn btn-primary">Recommend</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="justify-content-center bg-light mr-1 card col">
-            <div class="box">
-                <div class="content">
-                    <h2>Stressed</h2>
-                    <!-- <h3>Card Two</h3> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
-                        inventore?</p>
-                    <!-- <a href="#">Read More</a> -->
-                    <div class="mb-1">
-                        <button type="button" class="px-1 btn btn-primary">Recommend</button>
+        <!-- Row -->
+        <div class="mx-2 mb-1 row">
+    
+            <div class="justify-content-center bg-light mr-1 card col">
+                <div class="box">
+                    <div class="content">
+                        <h2>Sad</h2>
+                        <!-- <h3>Sad</h3> -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
+                            inventore?</p>
+                        <!-- <a href="#">Read More</a> -->
+                        <div class="mb-1">
+                            <button (click)=getGenres(Sad) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
+    
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="justify-content-center bg-light card col">
-            <div class="box">
-                <div class="content">
-                    <h2>Joyful</h2>
-                    <!-- <h3>Card Three</h3> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
-                        inventore?</p>
-                    <!-- <a href="#">Read More</a> -->
-                    <div class="mb-1">
-                        <button type="button" class="px-1 btn btn-primary">Recommend</button>
+    
+            <div class="justify-content-center bg-light mr-1 card col">
+                <div class="box">
+                    <div class="content">
+                        <h2>Stressed</h2>
+                        <!-- <h3>Card Two</h3> -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
+                            inventore?</p>
+                        <!-- <a href="#">Read More</a> -->
+                        <div class="mb-1">
+                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
                     </div>
                 </div>
+            </div>
+    
+            <div class="justify-content-center bg-light card col">
+                <div class="box">
+                    <div class="content">
+                        <h2>Joyful</h2>
+                        <!-- <h3>Card Three</h3> -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
+                            inventore?</p>
+                        <!-- <a href="#">Read More</a> -->
+                        <div class="mb-1">
+                            <button (click)=getGenres(Joyful) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Row -->
+        <div class="mx-2 mb-1 row">
+            <div class="justify-content-center bg-light mr-1 card col">
+                <div class="box">
+                    <div class="content">
+                        <h2>Thrill-seeking</h2>
+                        <!-- <h3>Card Four</h3> -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
+                            inventore?</p>
+                        <!-- <a href="#">Read More</a> -->
+                        <div class="mb-1">
+                            <button (click)=getGenres(thrillseeking) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="justify-content-center bg-light mr-1 card col">
+                <div class="box">
+                    <div class="content">
+                        <h2>Upbeat</h2>
+                        <!-- <h3>Card Five</h3> -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
+                            inventore?</p>
+                        <!-- <a href="#">Read More</a> -->
+                        <div class="mb-1">
+                            <button (click)=getGenres(Upbeat) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="justify-content-center bg-light card col">
+                <div class="box">
+                    <div class="content">
+                        <h2>Calm</h2>
+                        <!-- <h3>Card Six</h3> -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
+                            inventore?</p>
+                        <!-- <a href="#">Read More</a> -->
+                        <div class="mb-1">
+                            <button (click)=getGenres(Calm) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Row -->
+        <div class="mx-2 mb-1 row">
+            <div class="justify-content-center bg-light mr-1 card col">
+                <div class="box">
+                    <div class="content">
+                        <h2>Cozy</h2>
+                        <!-- <h3>Card Seven</h3> -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
+                            inventore?</p>
+                        <!-- <a href="#">Read More</a> -->
+                        <div class="mb-1">
+                            <button (click)=getGenres(Cozy) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="justify-content-center bg-light card col">
+                <div class="box">
+                    <div class="content">
+                        <h2>Nostalgic</h2>
+                        <!-- <h3>Card Eight</h3> -->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
+                            inventore?</p>
+                        <!-- <a href="#">Read More</a> -->
+                        <div class="mb-1">
+                            <button (click)=getGenres(Nostalgic) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- <div class="card col">
+                <div class="box">
+                    <div class="content">
+                        <h2>09</h2>
+                        <h3>Card Nine</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
+                            inventore?</p>
+                        <a href="#">Read More</a>
+                        <div>
+                            <button type="button" class="btn btn-primary">Recommend</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<div *ngIf="canSeeMovies">
+    <div class="row">
+        <button class="col-12 text-center btn btn-danger" (click)="switchScene()" type="button" >Back</button>
+    </div>
+    <div class="row">
+        <div class="my-2 col-4" style="width: 25% !important;" *ngFor="let movie of movies; let i = index ">
+            <div class="well text-center">
+                <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}"
+                onerror="this.onerror=null;this.src='NoImage.jpg';">
+                <h5>{{movie.title}}</h5>
+                <!-- <a (click)="movieSelected(movie.id)" class="btn btn-primary">Generate</a> -->
             </div>
         </div>
     </div>
-
-    <!-- Row -->
-    <div class="mx-2 mb-1 row">
-        <div class="justify-content-center bg-light mr-1 card col">
-            <div class="box">
-                <div class="content">
-                    <h2>Thrill-seeking</h2>
-                    <!-- <h3>Card Four</h3> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
-                        inventore?</p>
-                    <!-- <a href="#">Read More</a> -->
-                    <div class="mb-1">
-                        <button type="button" class="px-1 btn btn-primary">Recommend</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="justify-content-center bg-light mr-1 card col">
-            <div class="box">
-                <div class="content">
-                    <h2>Upbeat</h2>
-                    <!-- <h3>Card Five</h3> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
-                        inventore?</p>
-                    <!-- <a href="#">Read More</a> -->
-                    <div class="mb-1">
-                        <button type="button" class="px-1 btn btn-primary">Recommend</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="justify-content-center bg-light card col">
-            <div class="box">
-                <div class="content">
-                    <h2>Calm</h2>
-                    <!-- <h3>Card Six</h3> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
-                        inventore?</p>
-                    <!-- <a href="#">Read More</a> -->
-                    <div class="mb-1">
-                        <button type="button" class="px-1 btn btn-primary">Recommend</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Row -->
-    <div class="mx-2 mb-1 row">
-        <div class="justify-content-center bg-light mr-1 card col">
-            <div class="box">
-                <div class="content">
-                    <h2>Cozy</h2>
-                    <!-- <h3>Card Seven</h3> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
-                        inventore?</p>
-                    <!-- <a href="#">Read More</a> -->
-                    <div class="mb-1">
-                        <button type="button" class="px-1 btn btn-primary">Recommend</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="justify-content-center bg-light card col">
-            <div class="box">
-                <div class="content">
-                    <h2>Nostalgic</h2>
-                    <!-- <h3>Card Eight</h3> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
-                        inventore?</p>
-                    <!-- <a href="#">Read More</a> -->
-                    <div class="mb-1">
-                        <button type="button" class="px-1 btn btn-primary">Recommend</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="card col">
-            <div class="box">
-                <div class="content">
-                    <h2>09</h2>
-                    <h3>Card Nine</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore
-                        inventore?</p>
-                    <a href="#">Read More</a>
-                    <div>
-                        <button type="button" class="btn btn-primary">Recommend</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    </div>
-
 </div>
 
 <div class="row my-5"></div>

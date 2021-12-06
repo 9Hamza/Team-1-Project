@@ -15,16 +15,16 @@ body {
   background: #232427;
 }
 
-body .container {
+/* body .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 40px 0;
-}
+} */
 
-body .container .card {
+/* body .container .card {
   position: relative;
   min-width: 320px;
   height: 440px;
@@ -34,9 +34,9 @@ body .container .card {
   border-radius: 15px;
   margin: 30px;
   transition: 0.5s;
-}
+} */
 
-body .container .card:nth-child(1) .box .content a {
+/* body .container .card:nth-child(1) .box .content a {
   background: #2196f3;
 }
 
@@ -46,9 +46,9 @@ body .container .card:nth-child(2) .box .content a {
 
 body .container .card:nth-child(3) .box .content a {
   background: #23c186;
-}
+} */
 
-body .container .card .box {
+/* body .container .card .box {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -61,9 +61,9 @@ body .container .card .box {
   align-items: center;
   overflow: hidden;
   transition: 0.5s;
-}
+} */
 
-body .container .card .box:hover {
+/* body .container .card .box:hover {
   transform: translateY(-50px);
 }
 
@@ -122,4 +122,9 @@ body .container .card .box .content a:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
   background: #fff;
   color: #000;
+} */
+
+img {
+  width: 50%;
+  height: 50%;
 }

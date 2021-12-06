@@ -24,4 +24,8 @@ export class ApiCallsService {
   getCast(id:any){
     return this.http.get('https://api.themoviedb.org/3/movie/' + id + '/credits?api_key=ea13feb29808cba44ae41a961107c167');
   }
+
+  searchMoviesbyGenre(genres: string) {
+    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=ea13feb29808cba44ae41a961107c167&language=en-US&with_genres='+genres);
+  }
 }
