@@ -17,7 +17,7 @@
             <div class="col-md-3" style="width: 25% !important;" *ngFor="let movie of movies; let i = index ">
                 <div class="well text-center">
                     <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}"
-                    onerror="this.onerror=null;this.src='imagefound.gif';">
+                    onerror="this.onerror=null;this.src='NoImage.jpg';">
                     <h5>{{movie.title}}</h5>
                     <a (click)="movieSelected(movie.id)" class="btn btn-primary">Movie Details</a>
                 </div>
@@ -52,16 +52,6 @@
                 </div>
             </div>
 
-            <div>
-              <br>
-              <h4>Top Cast</h4>
-              <div class="scrolling-wrapper" *ngFor="let cast of casts; let i = index ">
-                <div class="card">
-                  <img src="{{'https://image.tmdb.org/t/p/w500'+cast.profile_path}}" id="profile" onerror="this.onerror=null;this.src='imagefound.gif';">
-                  <p align="center">{{cast.name}}</p>
-                </div>
-              </div>
-            </div>
 
 
 
@@ -69,12 +59,23 @@
               <div id="providerLogo"  *ngFor="let provider of providers; let i = index ">
                   <div class="well text-center">
                       <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+provider.logo_path}}"
-                      onerror="this.onerror=null;this.src='imagefound.gif';">
+                      onerror="this.onerror=null;this.src='NoImage.jpg';">
                   </div>
               </div>
                 <div class="well">
                     <h3 class="my-1">Description</h3>
                     {{movie.overview}}
+                    <h3 class="my-1ç">Top Cast</h3>
+                    <div class="my-1 scrollable horizontal-scroll-wrapper">
+                        <br>
+                        <div class="row">
+                            <div class="col-2" *ngFor="let cast of casts; let i = index ">
+                                <img src="{{'https://image.tmdb.org/t/p/w500'+cast.profile_path}}" id="profile" onerror="this.onerror=null;this.src='NoImage.jpg';">
+                                <p>{{cast.name}}</p>
+                            </div>
+                        </div>
+                      </div>
+
                     <hr>
                     <a href="{{movie.homepage}}" target="_blank" class="btn btn-primary">View Creator Page</a>
                     <a href="index.html" class="btn btn-close-white">Go Back To Search</a>

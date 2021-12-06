@@ -38,3 +38,10 @@
     display: inline-block;
     color: rgb(255, 255, 255);
   }
+
+  .horizontal-scroll-wrapper {
+    width: auto;
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
