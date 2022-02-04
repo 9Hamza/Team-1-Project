@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-weight: normal;
   font-family: "Poppins", sans-serif;
+  font-size: 12pt;
   position: relative;
 }
 
@@ -25,6 +26,7 @@ body {
 
 h1 {
   font-size: 2em;
+  color: inherit;
 
 }
 
@@ -82,7 +84,7 @@ transform: rotateY(180deg);
   background-position: center!important;
   height: 400px; /*height of card itself*/
   padding: 13em 3em; /*position of words on front*/
-  background: #a1ccf5; /*color of background of card*/
+  background: #7ab8ff; /*color of background of card*/
   border-radius: 100px; /*shape of card*/
 
 }

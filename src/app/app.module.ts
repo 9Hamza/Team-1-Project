@@ -60,6 +60,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FAQComponent } from './components/faq/faq.component';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     SearchComponent,
     MoodComponent,
     SearchFunctionComponent,
+    FAQComponent,
   ],
   imports: [
     BrowserModule,
