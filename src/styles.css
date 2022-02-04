@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 .bg-feldgrau {
-  background-color: rgb(67, 101, 91);
+  background-color: rgb(113, 149, 216);
 }
 
 .font-RobotoMono {
@@ -92,3 +92,5 @@ textarea {
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px #999;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
