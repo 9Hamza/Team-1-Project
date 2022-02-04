@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-weight: normal;
   font-family: "Poppins", sans-serif;
+  position: relative;
 }
 
 body {
@@ -16,7 +17,8 @@ body {
   min-height: 100vh;
   background: #232427;
   padding:2em;
-  position: center;
+  position: relative;
+  
 
   
 }
@@ -86,7 +88,7 @@ transform: rotateY(180deg);
 }
 
 .flip > .front p, .flip > .back p {
-  font-size: 0.9125rem;
+  font-size: 1.59125rem;
   line-height: 160%;
   color: #000000; /*main paragraph text on back of 
                         card regardless of flip*/
