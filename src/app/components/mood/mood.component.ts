@@ -22,6 +22,7 @@ export class MoodComponent implements OnInit {
   thrillseeking = '80,878,53,27'; // Crime, Science Fiction, Thriller, Horror
   Upbeat = '10752,10402,28'; // War, Music, Action
   Calm = '37,878,99'; // Western, Science Fiction, Documentary
+  Bored = '27, 18, 9648, 53'; // Horror, Drama, Mystery, Thriller
   Cozy = '37,10749,10751'; // Western, Romance, Family, Adventure
   Nostalgic = '10752,37,36,10402'; // War, Western, History, Music
 
