@@ -32,8 +32,15 @@ h1 {
 
 .flip{
   position: relative;
-
+  display: inline-block;
+  margin: 2em auto 2em;
+  width: 400px;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
 }
+
+
 .flip > .front, .flip > .back {
   display:block;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -65,15 +72,6 @@ transform: rotateY(180deg);
 .flip:hover > .back{
   opacity: 1;
   transform: rotateY(0deg);
-}
-
-.flip{
-  position: relative;
-  display: inline-block;
-  margin-right: 20px; /*space apart the cards inbetween 2 cards*/
-  margin-bottom: 2em; /*space apart cards between rows*/
-  width: 400px;
-
 }
 
 .flip > .front, .flip > .back {
