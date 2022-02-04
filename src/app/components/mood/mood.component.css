@@ -19,6 +19,8 @@ body {
   background: #232427;
   padding:2em;
   position: relative;
+
+  
   
 
   
@@ -28,6 +30,18 @@ h1 {
   font-size: 2em;
   color: inherit;
 
+}
+
+
+
+.centerplz{
+    /* other base styles go here */
+
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+     
+ 
 }
 
 .flip{
@@ -92,6 +106,7 @@ transform: rotateY(180deg);
 .flip > .front p, .flip > .back p {
   font-size: 1.59125rem;
   line-height: 160%;
+  
   color: #000000; /*main paragraph text on back of 
                         card regardless of flip*/
 }
