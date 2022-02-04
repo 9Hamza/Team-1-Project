@@ -1,145 +1,153 @@
 <div class="row my-5"></div>
 <div class="row my-5"></div>
 
+<div class="centerplz">
+    <div *ngIf="canSeeMoods">
+        <div class="row my-4"></div>
+        <div class="my-2 text-center">
 
-<div *ngIf="canSeeMoods">
-    <div class="row my-4"></div>
-    <div class="my-2 text-center">
-
-        <!-- Row -->
-        <div class="mx-2 mb-1 row">
-    
-            <div class="flip">
-                <div class= "front" style="background-color:#0071b6">            
-                        <h1>SAD</h1>
-                    </div> 
-                <div class="back">
-                    <p>SAD BACK tbddddddd</p>
-                    <div class="mb-1">
-                        <button (click)=getGenres(Sad) type="button" class="px-1 btn btn-primary">Recommend</button>
+            <!-- Row -->
+            <div class="mx-2 mb-1 row">
+        
+                <div class="flip">
+                    <div class= "front" style="background-color:#0071b6">            
+                            <h1>SAD</h1>
+                        </div> 
+                    <div class="back">
+                        <p>SAD BACK tbddddddd</p>
+                        <div class="mb-1">
+                            <button (click)=getGenres(Sad) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="flip">
-                <div class= "front" style="background-color:#3b060f">            
-                        <h1>STRESSED</h1>
-                    </div> 
-                <div class="back">
-                    <p>stressed BACK tbddddddd</p>
-                    <div class="mb-1">
-                        <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
+                <div class="flip">
+                    <div class= "front" style="background-color:#3b060f">            
+                            <h1>STRESSED</h1>
+                        </div> 
+                    <div class="back">
+                        <p>stressed BACK tbddddddd</p>
+                        <div class="mb-1">
+                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="flip">
-                <div class= "front" style="background-color:#FFE287">            
-                        <h1 style= "color:black">JOYFUL</h1>
-                    </div> 
-                <div class="back">
-                    <p>JOYFUL BACK tbddddddd</p>
-                    <div class="mb-1">
-                        <button (click)=getGenres(Joyful) type="button" class="px-1 btn btn-primary">Recommend</button>
+                <div class="flip">
+                    <div class= "front" style="background-color:#FFE287">            
+                            <h1 style= "color:black">JOYFUL</h1>
+                        </div> 
+                    <div class="back">
+                        <p>JOYFUL BACK tbddddddd</p>
+                        <div class="mb-1">
+                            <button (click)=getGenres(Joyful) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-    
-        <!-- Row -->
-        <div class="mx-2 mb-1 row">
-            <div class="flip">
-                <div class= "front" style="background-color:#6700FF">            
-                        <h1>THRILL - SEEKING</h1>
-                    </div> 
-                <div class="back">
-                    <p>thrill - seeking BACK tbddddddd</p>
-                    <div class="mb-1">
-                        <button (click)=getGenres(thrillseeking) type="button" class="px-1 btn btn-primary">Recommend</button>
+
+
+
+
+            <!-- Row -->
+            <div class="mx-2 mb-1 row">
+                <div class="flip">
+                    <div class= "front" style="background-color:#6700FF">            
+                            <h1>THRILLED</h1>
+                        </div> 
+                    <div class="back">
+                        <p>BORED BACK tbddddddd</p>
+                        <div class="mb-1">
+                            
+                            <button (click)=getGenres(thrillseeking) type="button" class="px-1 btn btn-primary">Recommend</button> 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="flip">
-                <div class= "front" style="background-color:#C5EBFE">            
-                    <h1 style= "color:black">UPBEAT</h1>
-                    </div> 
-                <div class="back">
-                    <p>UPBEAT BACK tbddddddd</p>
-                    <div class="mb-1">
-                        <button (click)=getGenres(Upbeat) type="button" class="px-1 btn btn-primary">Recommend</button>
+                <div class="flip">
+                    <div class= "front" style="background-color:#C5EBFE">            
+                        <h1 style= "color:black">UPBEAT</h1>
+                        </div> 
+                    <div class="back">
+                        <p>UPBEAT BACK tbddddddd</p>
+                        <div class="mb-1">
+                            <button (click)=getGenres(Upbeat) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="flip">
-                <div class= "front" style="background-color:#98e4d9">            
-                    <h1 style= "color:black">CALM</h1>
-                    </div> 
-                <div class="back">
-                    <p>CALM BACK tbddddddd</p>
-                    <div class="mb-1">
-                        <button (click)=getGenres(Calm) type="button" class="px-1 btn btn-primary">Recommend</button>
+                <div class="flip">
+                    <div class= "front" style="background-color:#98e4d9">            
+                        <h1 style= "color:black">CALM</h1>
+                        </div> 
+                    <div class="back">
+                        <p>CALM BACK tbddddddd</p>
+                        <div class="mb-1">
+                            <button (click)=getGenres(Calm) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
 
-         </div>
-    
-        <!-- Row -->
-        <div class="mx-2 mb-1 row">
-            <div class="flip">
-                <div class= "front" style="background-color:#343d52">            
-                        <h1>BORED</h1>
-                    </div> 
-                <div class="back">
-                    <p>BORED BACK tbddddddd</p>
-                    <div class="mb-1">
-                        
-                        <button (click)=getGenres(Bored) type="button" class="px-1 btn btn-primary">Recommend</button> 
-                    </div>
-                </div>
-            </div>
-
-            <div class="flip">
-                <div class= "front" style="background-color:#9b6a5b">            
-                        <h1>COZY</h1>
-                    </div> 
-                <div class="back">
-                    <p>COZY BACK tbddddddd</p>
-                    <div class="mb-1">
-                        <button (click)=getGenres(Cozy) type="button" class="px-1 btn btn-primary">Recommend</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flip">
-                <div class= "front" style="background-color:#896f95">            
-                        <h1>NOSTALGIC</h1>
-                    </div> 
-                <div class="back">
-                    <p>NOSTALGIC BACK tbddddddd</p>
-                    <div class="mb-1">
-                        <button (click)=getGenres(Nostalgic) type="button" class="px-1 btn btn-primary">Recommend</button>
-                    </div>
-                </div>
-            </div>
 
  
-<div *ngIf="canSeeMovies">
-    <div class="row">
-        <button class="col-12 text-center btn btn-danger" (click)="switchScene()" type="button" >Back</button>
-    </div>
-    <div class="row">
-        <div class="my-2 col-4" style="width: 25% !important;" *ngFor="let movie of movies; let i = index ">
-            <div class="well text-center">
-                <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}"
-                onerror="this.onerror=null;this.src='NoImage.jpg';">
-                <h5>{{movie.title}}</h5>
-                <!-- <a (click)="movieSelected(movie.id)" class="btn btn-primary">Generate</a> -->
+
+            </div>
+        
+            <!-- Row -->
+            <div class="mx-2 mb-1 row">
+                <div class="flip">
+                    <div class= "front" style="background-color:#343d52">            
+                            <h1>BORED</h1>
+                        </div> 
+                    <div class="back">
+                        <p>BORED BACK tbddddddd</p>
+                        <div class="mb-1">
+                            
+                            <button (click)=getGenres(Bored) type="button" class="px-1 btn btn-primary">Recommend</button> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip">
+                    <div class= "front" style="background-color:#9b6a5b">            
+                            <h1>COZY</h1>
+                        </div> 
+                    <div class="back">
+                        <p>COZY BACK tbddddddd</p>
+                        <div class="mb-1">
+                            <button (click)=getGenres(Cozy) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip">
+                    <div class= "front" style="background-color:#896f95">            
+                            <h1>NOSTALGIC</h1>
+                        </div> 
+                    <div class="back">
+                        <p>NOSTALGIC BACK tbddddddd</p>
+                        <div class="mb-1">
+                            <button (click)=getGenres(Nostalgic) type="button" class="px-1 btn btn-primary">Recommend</button>
+                        </div>
+                    </div>
+                </div>
+
+    
+    <div *ngIf="canSeeMovies">
+        <div class="row">
+            <button class="col-12 text-center btn btn-danger" (click)="switchScene()" type="button" >Back</button>
+        </div>
+        <div class="row">
+            <div class="my-2 col-4" style="width: 25% !important;" *ngFor="let movie of movies; let i = index ">
+                <div class="well text-center">
+                    <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}"
+                    onerror="this.onerror=null;this.src='NoImage.jpg';">
+                    <h5>{{movie.title}}</h5>
+                    <!-- <a (click)="movieSelected(movie.id)" class="btn btn-primary">Generate</a> -->
+                </div>
             </div>
         </div>
     </div>
