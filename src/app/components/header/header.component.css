@@ -1,3 +1,30 @@
+ul,ol{
+list-style: none;
+}
+    
+.pic{
+width:700px;
+height:317px;
+margin:150px auto;
+}
+    
+li{
+width:100px;
+float:left;
+border-left:1px solid #fff;
+position: relative;
+transition: all 1s;
+}
+
+.pic:hover li {
+width: 100px;
+}
+    
+.pic li:hover {
+width: 200px;
+}
+
+
 .navbar {
     /*padding-left: 20px;*/
     font-family: 'Roboto', sans-serif;
