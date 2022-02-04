@@ -48,6 +48,9 @@ h1 {
   position: relative;
 
 }
+
+ 
+
 .flip > .front, .flip > .back {
   display:block;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -106,7 +109,7 @@ transform: rotateY(180deg);
 .flip > .front p, .flip > .back p {
   font-size: 1.59125rem;
   line-height: 160%;
-  
+  padding: 2px 3px; /*position of words on front*/
   color: #000000; /*main paragraph text on back of 
                         card regardless of flip*/
 }
