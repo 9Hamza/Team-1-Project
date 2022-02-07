@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FAQComponent } from './components/faq/faq.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MoodComponent } from './components/mood/mood.component';
@@ -15,8 +16,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'search', component: SearchComponent, pathMatch: 'full'},
-  { path: 'mood' , component: MoodComponent },
+  { path: 'search', component: SearchComponent, pathMatch: 'full' },
+  { path: 'mood', component: MoodComponent },
+  { path: 'faq', component: FAQComponent }
 ];
 
 @NgModule({
