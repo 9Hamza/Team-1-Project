@@ -16,9 +16,9 @@ export class MoodComponent implements OnInit {
 
   Drama = '18'; // Drama
 
-  Sad = '18,12,10751,10749'; // Drama, Adventure, Family, Romance
-  Stressed = '35,10749,10402,16'; // Comedy, Romance, Music, Animation
-  Joyful = '28,35,14'; // Action, Comedy, Fantasy
+  Sad = '18' || '12'|| '10751'||'10749'; // Drama, Adventure, Family, Romance
+  Stressed = '35'||'10749'||'10402'||'16'; // Comedy, Romance, Music, Animation 
+  Joyful = '28'||'35'||'14'; // Action, Comedy, Fantasy
   thrillseeking = '80,878,53,27'; // Crime, Science Fiction, Thriller, Horror
   Upbeat = '10752,10402,28'; // War, Music, Action
   Calm = '37,878,99'; // Western, Science Fiction, Documentary
