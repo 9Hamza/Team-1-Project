@@ -9,6 +9,8 @@
   position: relative;
 }
 
+
+
 body {
   display: flex;
   justify-content: center;
@@ -32,6 +34,12 @@ h1 {
 
 }
 
+
+.heading__secondary {
+  font-size: 3rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
 
 
 .centerplz{
