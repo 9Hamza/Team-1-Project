@@ -55,7 +55,7 @@ h1 {
 .flip{
   position: relative;
   display: inline-block;
-  margin: 2em auto 2em;
+  margin: 2em 15px 2em;
   width: 400px;
   height: 400px;
   justify-content: center;
