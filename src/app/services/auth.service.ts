@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { snapshotChanges } from '@angular/fire/compat/database';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 
@@ -9,15 +10,17 @@ import { Router } from '@angular/router';
 export class AuthService {
 
 
-  
+
   userLoggedIn: boolean;      // other components can check on this variable for the login status of the user
   userID: string;
   email: string | null;
+  displayName: any;
 
   constructor(private router: Router, private afAuth: AngularFireAuth, private afs: AngularFirestore) {
     this.userLoggedIn = false;
     this.userID = "emptyID";
     this.email = "emptyEmail";
+    this.displayName = "";
 
     this.afAuth.onAuthStateChanged((user) => {              // set up a subscription to always know the login status of the user
       if (user) {
@@ -26,7 +29,7 @@ export class AuthService {
         this.email = user.email;
         console.log(user.displayName);                      // prints null 
         console.log(user.email);                            // prints actual email
-        console.log(this.userID);
+        console.log(this.userID);                           // prints UserID (random letters)
       } else {
         this.userLoggedIn = false;
       }
@@ -34,19 +37,35 @@ export class AuthService {
 
   }
 
-
-  onReadCollect(email:string) {
-    this.afs.collection("users", ref => ref.where("email", "==", email)).get().subscribe( snaps => {
-      snaps.forEach( snap => {
+  onReadCollect(email: string) {
+    this.afs.collection("users", ref => ref.where("email", "==", email)).get().subscribe(snaps => {
+      snaps.forEach(snap => {
         this.userID = snap.id;
-          // console.log(snap.id);
-          // console.log(snap.data());
+        console.log(snap.id);
+        // console.log(snap.data());
       })
-  })
+    })
   }
 
   getEmail() {
     return this.email;
+  }
+
+  getDisplayName() {
+    // this.afs.doc("users/" + this.email).get().subscribe(snap => {
+    //   console.log(snap.get("displayName"));
+    // })                                               RETURNS DISPLAY NAME (WHAT I WAS LOOKING FOR THE WHOLE TIME)
+
+    this.afs.doc("users/" + this.email).get().subscribe(snap => {
+      console.log(snap.get("displayName"));
+      this.displayName = snap.get("displayName");
+      console.log(this.displayName);
+    })
+    console.log(this.displayName);              //   TRYING TO ASSIGN A VARIABLE THAT VALUE
+
+    // return this.afs.doc("users/" + this.email).get().subscribe(snap => {
+    //   snap.get("displayName")
+    // })                                               TRYING TO RETURN A STRING VALUE
   }
 
   loginUser(email: string, password: string): Promise<any> {
@@ -54,6 +73,8 @@ export class AuthService {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then(() => {
         console.log('Auth Service: loginUser: success');
+        console.log(this.userID);
+        // this.userservice.setUser({, uid: this.userID});
         // this.router.navigate(['/dashboard']);
       })
       .catch(error => {
@@ -62,7 +83,7 @@ export class AuthService {
         console.log('error', error);
         if (error.code)
           return { isValid: false, message: error.message };
-          else return null;
+        else return null;
       });
   }
 
@@ -105,9 +126,9 @@ export class AuthService {
       });
   }
 
-  getAll(){
+  getAll() {
     this.afs.collection('users').snapshotChanges().subscribe((response) => {
-      console.log('response', response);
+      console.log('response: ', response);
     })
   }
 }

@@ -2,30 +2,30 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
-@Injectable({
+@Injectable({ // This service can be injectable in other components ( like when we used it in search or moods )
   providedIn: 'root'
 })
 export class ApiCallsService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   searchMovies(searchText: string) {
-    return this.http.get('https://api.themoviedb.org/3/search/movie?api_key=ea13feb29808cba44ae41a961107c167&query='+searchText);
+    return this.http.get('https://api.themoviedb.org/3/search/movie?api_key=ea13feb29808cba44ae41a961107c167&query=' + searchText);
   }
 
-  movieDetails(id:any) {
+  movieDetails(id: any) {
     return this.http.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=ea13feb29808cba44ae41a961107c167');
   }
 
-  watchFeature(id:any) {
+  watchFeature(id: any) {
     return this.http.get('https://api.themoviedb.org/3/movie/' + id + '/watch/providers?api_key=ea13feb29808cba44ae41a961107c167');
   }
 
-  getCast(id:any){
+  getCast(id: any) {
     return this.http.get('https://api.themoviedb.org/3/movie/' + id + '/credits?api_key=ea13feb29808cba44ae41a961107c167');
   }
 
   searchMoviesbyGenre(genres: string) {
-    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=ea13feb29808cba44ae41a961107c167&language=en-US&with_genres='+genres);
+    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=ea13feb29808cba44ae41a961107c167&language=en-US&with_genres=' + genres);
   }
 }
