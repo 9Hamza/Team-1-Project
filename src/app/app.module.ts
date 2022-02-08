@@ -61,6 +61,7 @@ import { FirestoreModule } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { FAQComponent } from './components/faq/faq.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { FAQComponent } from './components/faq/faq.component';
     MoodComponent,
     SearchFunctionComponent,
     FAQComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
