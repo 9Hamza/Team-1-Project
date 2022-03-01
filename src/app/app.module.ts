@@ -64,6 +64,7 @@ import { FAQComponent } from './components/faq/faq.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,12 +79,12 @@ import { ContactComponent } from './components/contact/contact.component';
     MoodComponent,
     SearchFunctionComponent,
     FAQComponent,
-    ContactComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'search', component: SearchComponent},
+      { path: 'search', component: SearchComponent },
       //{path: 'movie', component: MovieComponent},
     ]),
     AppRoutingModule,

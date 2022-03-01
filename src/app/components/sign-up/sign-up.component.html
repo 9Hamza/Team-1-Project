@@ -3,29 +3,29 @@
         <h2>SignUp</h2>
         <form [formGroup]="signupForm" (ngSubmit)="signup()">
             <div class="item">
-                <input formControlName="displayName" type = "name" required>
-                <label for ="">FullName</label>
+                <input formControlName="displayName" type="name" required>
+                <label for="">Full Name</label>
             </div>
             <div class="item">
-                <input formControlName="email" type = "text" required>
-                <label for ="">UserName</label>
+                <input formControlName="email" type="text" required>
+                <label for="">Username</label>
             </div>
-    <div class= "item">
-        <input formControlName="password" type = "password" required>
-        <label for="">PassWord</label>
+            <div class="item">
+                <input formControlName="password" type="password" required>
+                <label for="">Password</label>
+            </div>
+            <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+                <span>{{ firebaseErrorMessage }}</span>
+            </div>
+            <button class="btn">Submit
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </form>
+        <div class="progressIndicator" [style.display]="isProgressVisible ? 'inline' : 'none' ">
+            <mat-progress-spinner class=" example-margin" color="primary" mode="indeterminate"></mat-progress-spinner>
+        </div>
     </div>
-    <div *ngIf="firebaseErrorMessage != ''" class="error-style">
-        <span>{{ firebaseErrorMessage }}</span>
-    </div>
-        <button class="btn">submit
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </form>
-    <div class="progressIndicator" [style.display]="isProgressVisible ? 'inline' : 'none' ">
-        <mat-progress-spinner class=" example-margin" color="primary" mode="indeterminate"></mat-progress-spinner>
-    </div>
-</div>
 </body>

@@ -54,18 +54,37 @@ export class AuthService {
   getDisplayName() {
     // this.afs.doc("users/" + this.email).get().subscribe(snap => {
     //   console.log(snap.get("displayName"));
-    // })                                               RETURNS DISPLAY NAME (WHAT I WAS LOOKING FOR THE WHOLE TIME)
+    // })                                            // RETURNS DISPLAY NAME (WHAT I WAS LOOKING FOR THE WHOLE TIME)
 
     this.afs.doc("users/" + this.email).get().subscribe(snap => {
-      console.log(snap.get("displayName"));
+      console.log(snap.get("displayName"));       // RETURNS NOTHING
       this.displayName = snap.get("displayName");
       console.log(this.displayName);
     })
-    console.log(this.displayName);              //   TRYING TO ASSIGN A VARIABLE THAT VALUE
+    console.log(this.displayName);                   // TRYING TO ASSIGN A VARIABLE THAT VALUE
 
     // return this.afs.doc("users/" + this.email).get().subscribe(snap => {
     //   snap.get("displayName")
-    // })                                               TRYING TO RETURN A STRING VALUE
+    // })                                            // TRYING TO RETURN A STRING VALUE
+  }
+
+  getMovieList() {
+    this.afs.doc("users/hamzahamza@gmail.com").get().subscribe(snap => {
+      console.log("BEFORE")
+      console.log(snap.data());
+      console.log("getMovieList();");
+      console.log(snap.get("endUser"));
+      console.log(snap.id);
+      console.log("AFTER");
+    })
+  }
+
+  getGenres() {
+    this.afs.collectionGroup('users/hamzahamza@gmail.com/recommendation-preferences/sad').get().subscribe(snaps => {
+      snaps.forEach(snap => {
+        console.log(snap.data());
+      })
+    })
   }
 
   loginUser(email: string, password: string): Promise<any> {
