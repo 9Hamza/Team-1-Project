@@ -1,4 +1,8 @@
-a #logo{
+.nav-white {
+    color: #fff !important;
+}
+
+a #logo {
     font-size: 30px;
     font-weight: 600;
     text-transform: uppercase;
@@ -6,66 +10,60 @@ a #logo{
     background-color: none;
 }
 
-a span{
+a.navbar-brand span {
     animation: light 1s infinite linear;
 }
 
-a span:nth-child(1){
+a span:nth-child(1) {
     animation-delay: 0s;
 }
 
-a span:nth-child(2){
+a span:nth-child(2) {
     animation-delay: 0.1s;
 }
 
-a span:nth-child(3){
+a span:nth-child(3) {
     animation-delay: 0.2s;
 }
 
-a span:nth-child(4){
+a span:nth-child(4) {
     animation-delay: 0.3s;
 }
 
-a span:nth-child(5){
+a span:nth-child(5) {
     animation-delay: 0.4s;
 }
 
-a span:nth-child(6){
+a span:nth-child(6) {
     animation-delay: 0.5s;
 }
 
-a span:nth-child(7){
+a span:nth-child(7) {
     animation-delay: 0.6s;
 }
 
-a span:nth-child(8){
+a span:nth-child(8) {
     animation-delay: 0.7s;
 }
 
-a span:nth-child(9){
+a span:nth-child(9) {
     animation-delay: 0.8s;
 }
 
-a span:nth-child(10){
+a span:nth-child(10) {
     animation-delay: 0.9s;
 }
 
 @keyframes light {
     0%,
-    80%{
+    80% {
         color: #333;
         text-shadow: none;
     }
-    100%{
+    100% {
         color: #fff;
-        text-shadow: 0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 40px #fff,
-        0 0 80px #fff,
-        0 0 120px #fff,
-        0 0 160px #fff;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff, 0 0 120px #fff, 0 0 160px #fff;
     }
-    
 }
 
 ul a {
@@ -78,16 +76,16 @@ ul a {
     color: #fff;
 }
 
-ul a:hover{
-    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+ul a:hover {
+    background: #99AAB5;
 }
 
-ul a::before{
+ul a::before {
     content: '';
     position: absolute;
     background: inherit;
     top: -5px;
-    right:-5px;
+    right: -5px;
     bottom: -5px;
     left: -5px;
     border-radius: 50px;
@@ -96,35 +94,35 @@ ul a::before{
     transition: opacity 0.5s;
 }
 
-ul a:hover:before{
+ul a:hover:before {
     opacity: 1;
     z-index: -1;
 }
 
-ul a:hover{
+ul a:hover {
     z-index: 1;
     animation: glow 8s linear infinite;
 }
 
 @keyframes glow {
-    0%{
+    0% {
         background-position: 0%;
     }
-    100%{
+    100% {
         background-position: 400%;
     }
 }
 
-ul button:hover{
-    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+ul button:hover {
+    background: #99AAB5;
 }
 
-ul button::before{
+ul button::before {
     content: '';
     position: absolute;
     background: inherit;
     top: -5px;
-    right:-5px;
+    right: -5px;
     bottom: -5px;
     left: -5px;
     border-radius: 50px;
@@ -133,21 +131,21 @@ ul button::before{
     transition: opacity 0.5s;
 }
 
-ul button:hover:before{
+ul button:hover:before {
     opacity: 1;
     z-index: -1;
 }
 
-ul button:hover{
+ul button:hover {
     z-index: 1;
     animation: glow 8s linear infinite;
 }
 
 @keyframes glow {
-    0%{
+    0% {
         background-position: 0%;
     }
-    100%{
+    100% {
         background-position: 400%;
     }
 }
