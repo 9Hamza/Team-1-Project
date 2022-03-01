@@ -105,7 +105,7 @@ transform: rotateY(180deg);
   background-position: center!important;
   height: 400px; /*height of card itself*/
   padding: 13em 3em; /*position of words on front*/
-  background: #7ab8ff; /*color of background of card*/
+  background: white; /*color of background of card*/
   border-radius: 100px; /*shape of card*/
 
 }
