@@ -3,19 +3,10 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthService } from 'src/app/services/auth.service';
 import { getDatabase } from 'firebase/database'
 
-
-// interface User {
-//   accountType: string;
-//   displayName: string;
-//   displayName_lower: string;
-//   email: string | null;
-//   email_lower: string;
-// }
-
 import { getAuth } from "firebase/auth";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-profile',
@@ -25,8 +16,13 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 export class ProfileComponent implements OnInit {
 
-  constructor(private db: AngularFireDatabase, public auth: AngularFireAuth, private afs: AngularFirestore, private as: AuthService) { }
   // A constructor is supposed to be for injecting things like services 
+  constructor(
+    private db: AngularFireDatabase,
+    public auth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private as: AuthService,
+    private movieService: MoviesService) { }
 
   accountType = '';
   displayName = '';
@@ -40,11 +36,12 @@ export class ProfileComponent implements OnInit {
     const user = auth.currentUser;
     this.email = this.as.getEmail();
     this.getDisplayName();
-    console.log(this.displayName);
-    console.log(this.as.getAll());
-    console.log(auth.currentUser?.displayName);
-
+    // console.log(this.displayName);               // Returns nothing
+    // console.log(this.as.getAll());               // Returns UNDEFINED
+    // console.log(auth.currentUser?.displayName);  // Returns NULL
+    this.as.getMovieList();
     this.as.getDisplayName();
+    // this.as.getGenres();
   }
 
   // onReadCollectEach() {

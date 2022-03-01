@@ -17,7 +17,7 @@
             <div class="col-md-3" style="width: 25% !important;" *ngFor="let movie of movies; let i = index ">
                 <div class="well text-center">
                     <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}"
-                    onerror="this.onerror=null;this.src='NoImage.jpg';">
+                        onerror="this.onerror=null;this.src='NoImage.jpg';">
                     <h5>{{movie.title}}</h5>
                     <a (click)="movieSelected(movie.id)" class="btn btn-primary">Movie Details</a>
                 </div>
@@ -52,12 +52,12 @@
             </div>
 
             <div class="row">
-              <div id="providerLogo"  *ngFor="let provider of providers; let i = index ">
-                  <div class="well text-center">
-                      <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+provider.logo_path}}"
-                      onerror="this.onerror=null;this.src='NoImage.jpg';">
-                  </div>
-              </div>
+                <div id="providerLogo" *ngFor="let provider of providers; let i = index ">
+                    <div class="well text-center">
+                        <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+provider.logo_path}}"
+                            onerror="this.onerror=null;this.src='NoImage.jpg';">
+                    </div>
+                </div>
                 <div class="well">
                     <h3 class="my-1">Description</h3>
                     {{movie.overview}}
@@ -66,11 +66,12 @@
                         <br>
                         <div class="row">
                             <div class="col-2" *ngFor="let cast of casts; let i = index ">
-                                <img src="{{'https://image.tmdb.org/t/p/w500'+cast.profile_path}}" id="profile" onerror="this.onerror=null;this.src='NoImage.jpg';">
+                                <img src="{{'https://image.tmdb.org/t/p/w500'+cast.profile_path}}" id="profile"
+                                    onerror="this.onerror=null;this.src='NoImage.jpg';">
                                 <p>{{cast.name}}</p>
                             </div>
                         </div>
-                      </div>
+                    </div>
 
                     <hr>
                     <a href="{{movie.homepage}}" target="_blank" class="btn btn-primary">View Creator Page</a>
@@ -84,7 +85,7 @@
 </div>
 
 
-<body>
+<!-- <body>
     <div class = "card">
         <input type = "radio" name = "select" id = "slide_1" checked>
         <input type = "radio" name = "select" id = "slide_2">
@@ -134,5 +135,4 @@
             </div>
     
     </div>
-</body>
-  
+</body> -->

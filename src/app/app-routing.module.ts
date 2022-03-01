@@ -20,11 +20,13 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent, pathMatch: 'full' },
   { path: 'mood', component: MoodComponent },
   { path: 'faq', component: FAQComponent },
-  { path: 'contact' , component: ContactComponent }
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    anchorScrolling: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
