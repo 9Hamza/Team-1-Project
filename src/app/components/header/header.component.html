@@ -1,102 +1,240 @@
 <header class="bg-feldgrau py-5">
-  <div class="container px-5">
-    <div class="row gx-5 align-items-center justify-content-center">
-      <div class="col-lg-8 col-xl-7 col-xxl-6">
-        <div class="my-5 text-center text-xl-start">
-          <h1 class="display-5 fw-bolder text-white mb-2">Watch what you desire based on your mood!</h1>
-          <p class="lead fw-normal text-white-50 mb-4">Take a quick test that will customize your desired movies and
-            build the optimal recommendations for you.</p>
-          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-            <a class="btn btn-outline-light btn-lg px-4" routerLink="/faq">Learn More</a>
+  <div *ngIf="!isdetail">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center justify-content-center">
+        <div class="col-lg-8 col-xl-7 col-xxl-6">
+          <div class="my-5 text-center text-xl-start">
+            <h1 class="display-5 fw-bolder text-white mb-2">Watch what you desire based on your mood!</h1>
+            <p class="lead fw-normal text-white-50 mb-4">Take a quick test that will customize your desired movies and
+              build the optimal recommendations for you.</p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+              <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+              <a class="btn btn-outline-light btn-lg px-4" routerLink="/faq">Learn More</a>
+            </div>
           </div>
         </div>
+        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+          
+          <ul class="pic">
+            <p class="display-6 fw-bolder text-white mb-0">Recommended for you!</p>
+              {{getNowPlaying()}}
+              {{getPopular()}}
+              {{getUpcoming()}}
+              {{getTopRated()}}
+              <li><img class="1" src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[0].poster_path}}" alt="" width="200" height="317"></li>
+              <li><img class="1"src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[1].poster_path}}" alt="" width="200" height="317"></li>
+              <li><img class="1" src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[1].poster_path}}" alt="" width="200" height="317"></li>
+              <li><img class="1"src="{{'https://image.tmdb.org/t/p/w500'+moviesTop[0].poster_path}}" alt="" width="200" height="317"></li>
+              <li><img class="1"src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[1].poster_path}}" alt="" width="200" height="317"></li>
+          </ul>
+        </div>
       </div>
-      <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-        <ul class="pic">
-          <p class="display-6 fw-bolder text-white mb-0">RECOMMEND FOR YOU!</p>
-          <li>
-            <img class="1"
-              src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/spotlight/FND_poster_Venom2_OnDemand.jpg"
-              alt="" width="200" height="317">
-          </li>
-          <li>
-            <img class="1"
-              src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/225415/FND_poster_SpiderMan_PreSale.jpg"
-              alt="" width="200" height="317">
-          </li>
-          <li>
-            <img class="1"
-              src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/224993/FND_poster_Clifford_InTheaters.jpg"
-              alt="" width="200" height="317">
-          </li>
-          <li>
-            <img class="1"
-              src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/219412/FND_poster_Ghostbusters_InTheaters.jpg"
-              alt="" width="200" height="317">
-          </li>
-          <li>
-            <img class="1"
-              src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/spotlight/FND_poster_Spencer_OnDemand.jpg"
-              alt="" width="200" height="317">
-          </li>
-        </ul>
+    </div>
+    
+  <div class="container mt-5 mb-5">
+    <h2 style="color: white;">Now playing</h2>
+    <div class="card-deck">
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[0].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesNow[0].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesNow[0].vote_average}}</small></p>
+        </div>
+        <a (click)="getMovie(moviesNow[0].id)" class="btn btn-primary">Movie Details</a>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[1].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesNow[1].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesNow[1].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[2].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesNow[2].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesNow[2].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[3].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesNow[3].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesNow[3].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[4].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesNow[4].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesNow[4].vote_average}}</small></p>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  <div class="container mt-5 mb-5">
+    <h2 style="color: white;">In theatres</h2>
+    <div class="card-deck">
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[0].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesUpcoming[0].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesUpcoming[0].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[1].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesUpcoming[1].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesUpcoming[1].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[2].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesUpcoming[2].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesUpcoming[2].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[3].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesUpcoming[3].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesUpcoming[3].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[4].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesUpcoming[4].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesUpcoming[4].vote_average}}</small></p>
+        </div>
       </div>
     </div>
   </div>
-</header>
-<div class="container mt-5 mb-5">
-  <div class="card-deck">
-    <div class="col-sm-2 border border-dark card">
-      <img class="card-img-top img-fluid"
-        src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/spotlight/FND_poster_Venom2_OnDemand.jpg"
-        alt="Card image cap" width="400" height="300">
-      <div class="card-body">
-        <h5 class="card-title font-RobotoMono">VENOM: LET THERE BE CARNAGE (2021)</h5>
-        <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-        <p class="card-text"><small class="text-muted">Fri, Oct 1, 2021</small></p>
+  <div class="container mt-5 mb-5">
+    <h2 style="color: white;">Popular</h2>
+    <div class="card-deck">
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[0].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesPopular[0].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesPopular[0].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[1].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesPopular[1].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesPopular[1].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[2].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesPopular[2].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesPopular[2].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[3].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesPopular[3].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesPopular[3].vote_average}}</small></p>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-dark card">
+        <img class="card-img-top img-fluid"
+          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[4].poster_path}}"
+          alt="Card image cap" width="400" height="300">
+        <div class="card-body">
+          <h4 class="card-title font-RobotoMono">{{moviesPopular[4].title}}</h4>
+          <p class="card-text"><small class="text-muted">{{moviesPopular[4].vote_average}}</small></p>
+        </div>
       </div>
     </div>
-    <div class="col-sm-2 border border-dark card">
-      <img class="card-img-top img-fluid"
-        src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/225415/FND_poster_SpiderMan_PreSale.jpg"
-        alt="Card image cap" width="400" height="300">
-      <div class="card-body">
-        <h5 class="card-title font-RobotoMono">SPIDER-MAN: NO WAY HOME (2021)</h5>
-        <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-        <p class="card-text"><small class="text-muted">Fri, Dec 17, 2021</small></p>
-      </div>
-    </div>
-    <div class="col-sm-2 border border-dark card">
-      <img class="card-img-top img-fluid"
-        src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/224993/FND_poster_Clifford_InTheaters.jpg"
-        alt="Card image cap" width="400" height="300">
-      <div class="card-body">
-        <h5 class="card-title font-RobotoMono">CLIFFORD THE BIG RED DOG (2021)</h5>
-        <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-        <p class="card-text"><small class="text-muted">Wed, Nov 10, 2021</small></p>
-      </div>
-    </div>
-    <div class="col-sm-2 border border-dark card">
-      <img class="card-img-top img-fluid"
-        src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/219412/FND_poster_Ghostbusters_InTheaters.jpg"
-        alt="Card image cap" width="400" height="300">
-      <div class="card-body">
-        <h5 class="card-title font-RobotoMono">GHOSTBUSTERS: AFTERLIFE (2021)</h5>
-        <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-        <p class="card-text"><small class="text-muted">Fri, Nov 19, 2021</small></p>
-      </div>
-    </div>
-    <div class="col-sm-2 border border-dark card">
-      <img class="card-img-top img-fluid"
-        src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/spotlight/FND_poster_Spencer_OnDemand.jpg"
-        alt="Card image cap" width="400" height="300">
-      <div class="card-body">
-        <h5 class="card-title font-RobotoMono">SPENCER</h5>
-        <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-        <p class="card-text"><small class="text-muted">Fri, Nov 5, 2021</small></p>
-      </div>
-    </div>
-
   </div>
-</div>
+  </div>
+  <div *ngIf="isdetail">
+    <div class="container">
+      <div id="movie" class="well">
+          <div class="row">
+              <div class="col-md-4" style="width: auto">
+                  <img src="{{'https://image.tmdb.org/t/p/w500'+movieSelected.poster_path}}" class="thumbnail"
+                      style="width: auto">
+              </div>
+              <div class="col-md-8" style="width: auto">
+                  <h2>{{movieSelected.title}}</h2>
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Genre:</strong> <span *ngFor="let x of movieSelected.genres"> {{
+                              x.name + ', '}}</span></li>
+                      <li class="list-group-item"><strong>Language:</strong> {{movieSelected.original_language}}</li>
+                      <li class="list-group-item"><strong>Release Date:</strong> {{movieSelected.release_date}}</li>
+                      <li class="list-group-item"><strong>Tagline:</strong> {{movieSelected.tagline}}</li>
+                      <li class="list-group-item"><strong>Budget:</strong> {{'$' + movieSelected.budget}}</li>
+                      <li class="list-group-item"><strong>Vote Average:</strong> {{movieSelected.vote_average}}</li>
+                      <li class="list-group-item"><strong>Creator Page:</strong> {{movieSelected.homepage}}</li>
+                  </ul>
+              </div>
+          </div>
+  
+          <div class="row">
+            <div id="providerLogo"  *ngFor="let provider of providers; let i = index ">
+                <div class="well text-center">
+                    <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+provider.logo_path}}"
+                    onerror="this.onerror=null;this.src='NoImage.jpg';">
+                </div>
+            </div>
+              <div class="well">
+                  <h3 class="my-1">Description</h3>
+                  {{movieSelected.overview}}
+                  <h3 class="my-1ç">Top Cast</h3>
+                  <div class="my-1 scrollable horizontal-scroll-wrapper">
+                      <br>
+                      <div class="row">
+                          <div class="col-2" *ngFor="let cast of casts; let i = index ">
+                              <img src="{{'https://image.tmdb.org/t/p/w500'+cast.profile_path}}" id="profile" onerror="this.onerror=null;this.src='NoImage.jpg';">
+                              <p>{{cast.name}}</p>
+                          </div>
+                      </div>
+                    </div>
+  
+                  <hr>
+                  <a href="{{movieSelected.homepage}}" target="_blank" class="btn btn-primary">View Creator Page</a>
+                  <a href="index.html" class="btn btn-close-white">Go Back To Search</a>
+                  <div class="row my-3"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </header>

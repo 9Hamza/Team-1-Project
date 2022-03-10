@@ -1,53 +1,52 @@
-
-
-
-<div class="centerplz">
+<!-- <div class="text-center"><button class="px-4 mt-4 btn btn-primary" routerLink="/mood">Set Up
+        Recommendations</button></div> -->
+<div class="mb-4 centerplz">
     <div *ngIf="canSeeMoods">
-         
-
-        <div class="row my-4"></div>
+        <div class="row my-2"></div>
         <div class="my-2 text-center">
 
             <!-- Row -->
             <div class="mx-2 mb-1 row">
-        
+
                 <div class="flip">
-                    <div class= "front" style="background-color:#4071C9">            
-                            <h1>SAD</h1>
-                        </div> 
+                    <div class="front" style="background-color:#4071C9">
+                        <h1>SAD</h1>
+                    </div>
                     <div class="back">
-                        <h1 style = "color:black">Adventure, Family, Romance.</h1>
+                        <h1 style="color:black">Adventure, Family, Romance.</h1>
                         <!--<h1 style = "color:black">To get you in your feelings.</h1>-->
                         <div class="mb-1">
-                            <button (click)=getGenres(Sad) type="button" class="px-1 btn btn-primary">Recommend</button>
+                            <button (click)=getGenres(sad) type="button" class="px-1 btn btn-primary">Recommend</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="flip">
-                    <div class= "front" style="background-color:#3D0814">            
-                            <h1>STRESSED</h1>
-                        </div> 
+                    <div class="front" style="background-color:#3D0814">
+                        <h1>STRESSED</h1>
+                    </div>
                     <div class="back">
-                        <h1 style = "color:black">Comedy, Animation, Music.</h1>
+                        <h1 style="color:black">Comedy, Animation, Music.</h1>
 
                         <!--<h1 style = "color:black">Feeling stressed? Here's relief</h1>-->
                         <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
+                            <button (click)=getGenres(stressed) type="button"
+                                class="px-1 btn btn-primary">Recommend</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="flip">
-                    <div class= "front" style="background-color:#F5EBE0">            
-                            <h1 style= "color:#2e5581">JOYFUL</h1>
-                        </div> 
+                    <div class="front" style="background-color:#F5EBE0">
+                        <h1 style="color:#2e5581">JOYFUL</h1>
+                    </div>
                     <div class="back">
-                        <h1 style = "color:black"> Action, Comedy, Fantasy.</h1>
-<!--<h1 style = "color:black">Feeling stressed? Here's relief</h1>-->
+                        <h1 style="color:black"> Action, Comedy, Fantasy.</h1>
+                        <!--<h1 style = "color:black">Feeling stressed? Here's relief</h1>-->
 
                         <div class="mb-1">
-                            <button (click)=getGenres(Joyful) type="button" class="px-1 btn btn-primary">Recommend</button>
+                            <button (click)=getGenres(joyful) type="button"
+                                class="px-1 btn btn-primary">Recommend</button>
                         </div>
                     </div>
                 </div>
@@ -61,45 +60,49 @@
             <!-- Row -->
             <div class="mx-2 mb-1 row">
                 <div class="flip">
-                    <div class= "front" style="background-color:#1F363D">            
-                            <h1>THRILLED</h1>
-                        </div> 
+                    <div class="front" style="background-color:#1F363D">
+                        <h1>THRILLED</h1>
+                    </div>
                     <div class="back">
-                        <h1 style = "color:black">Crime, Thriller, Horror.</h1>
+                        <h1 style="color:black">Crime, Thriller, Horror.</h1>
 
-<!--<h1 style = "color:black">Even better than sky - diving.</h1>-->
+                        <!--<h1 style = "color:black">Even better than sky - diving.</h1>-->
 
                         <div class="mb-1">
-                            
-                            <button (click)=getGenres(thrillseeking) type="button" class="px-1 btn btn-primary">Recommend</button> 
+
+                            <button (click)=getGenres(thrilled) type="button"
+                                class="px-1 btn btn-primary">Recommend</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="flip">
-                    <div class= "front" style="background-color:#cae9ff">            
-                        <h1 style= "color:black">UPBEAT</h1>
-                        </div> 
+                    <div class="front" style="background-color:#cae9ff">
+                        <h1 style="color:black">UPBEAT</h1>
+                    </div>
                     <div class="back">
-                        <h1 style = "color:black">Adventure, Music, Action.</h1>
+                        <h1 style="color:black">Adventure, Music, Action.</h1>
 
                         <!--<h1 style = "color:black">Your daily mood booster.</h1>-->
 
-                        
+
                         <div class="mb-1">
-                            <button (click)=getGenres(Upbeat) type="button" class="px-1 btn btn-primary">Recommend</button>
+                            <button (click)=getGenres(upbeat) type="button"
+                                class="px-1 btn btn-primary">Recommend</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="flip">
-                    <div class= "front" style="background-color:#9EC1A3">            
-                        <h1 style= "color:#2e5581">CALM</h1>
-                        </div> 
+                    <div class="front" style="background-color:#9EC1A3">
+                        <h1 style="color:#2e5581">CALM</h1>
+                    </div>
                     <div class="back">
-                        <h1 style = "color:black">Documentary, Western, Science Fiction.</h1><!--We all need a chill day-->
+                        <h1 style="color:black">Documentary, Western, Science Fiction.</h1>
+                        <!--We all need a chill day-->
                         <div class="mb-1">
-                            <button (click)=getGenres(Calm) type="button" class="px-1 btn btn-primary">Recommend</button>
+                            <button (click)=getGenres(calm) type="button"
+                                class="px-1 btn btn-primary">Recommend</button>
                         </div>
                     </div>
                 </div>
@@ -108,46 +111,52 @@
 
 
 
- 
 
-            
-        
+
+
+
             <!-- Row -->
             <div class="mx-2 mb-1 row">
                 <div class="flip">
-                    <div class= "front" style="background-color:#343d52">            
-                            <h1>BORED</h1>
-                        </div> 
+                    <div class="front" style="background-color:#343d52">
+                        <h1>BORED</h1>
+                    </div>
                     <div class="back">
-                        <h1 style = "color:black">Drama, Mystery, Thriller. </h1><!--For all the couch potatoes.-->
+                        <h1 style="color:black">Drama, Mystery, Thriller. </h1>
+                        <!--For all the couch potatoes.-->
                         <div class="mb-1">
-                            
-                            <button (click)=getGenres(Bored) type="button" class="px-1 btn btn-primary">Recommend</button> 
+
+                            <button (click)=getGenres(bored) type="button"
+                                class="px-1 btn btn-primary">Recommend</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="flip">
-                    <div class= "front" style="background-color:#9b6a5b">            
-                            <h1>COZY</h1>
-                        </div> 
+                    <div class="front" style="background-color:#9b6a5b">
+                        <h1>COZY</h1>
+                    </div>
                     <div class="back">
-                        <h1 style = "color:black">Family, Western, Romance. </h1><!--Here lies the path to warm and cozy.-->
+                        <h1 style="color:black">Family, Western, Romance. </h1>
+                        <!--Here lies the path to warm and cozy.-->
 
                         <div class="mb-1">
-                            <button (click)=getGenres(Cozy) type="button" class="px-1 btn btn-primary">Recommend</button>
+                            <button (click)=getGenres(cozy) type="button"
+                                class="px-1 btn btn-primary">Recommend</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="flip">
-                    <div class= "front" style="background-color:#896f95">            
-                            <h1>NOSTALGIC</h1>
-                        </div> 
+                    <div class="front" style="background-color:#896f95">
+                        <h1>NOSTALGIC</h1>
+                    </div>
                     <div class="back">
-                        <h1 style = "color:black">History, Western, Music. </h1> <!--Time for a trip to the past.-->
+                        <h1 style="color:black">History, Western, Music. </h1>
+                        <!--Time for a trip to the past.-->
                         <div class="mb-1">
-                            <button (click)=getGenres(Nostalgic) type="button" class="px-1 btn btn-primary">Recommend</button>
+                            <button (click)=getGenres(nostalgic) type="button"
+                                class="px-1 btn btn-primary">Recommend</button>
                         </div>
                     </div>
                 </div>
@@ -156,21 +165,98 @@
     </div>
 </div>
 
-    <div *ngIf="canSeeMovies">
-        <div class="row">
-            <button class="col-12 text-center btn btn-danger" (click)="switchScene()" type="button" >Back</button>
-        </div>
-        <div class="row">
-            <div class="my-2 col-4" style="width: 25% !important;" *ngFor="let movie of movies; let i = index ">
-                <div class="well text-center">
-                    <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}"
+<div *ngIf="canSeeMovies">
+    <div class="row">
+        <button class="col-12 text-center btn btn-danger" (click)="switchScene()" type="button">Back</button>
+    </div>
+    <div class="row">
+        <div class="my-2 col-4" style="width: 25% !important;" *ngFor="let movie of movies; let i = index ">
+            <div class="well text-center">
+                <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}"
                     onerror="this.onerror=null;this.src='NoImage.jpg';">
-                    <h5>{{movie.title}}</h5>
-                    <!-- <a (click)="movieSelected(movie.id)" class="btn btn-primary">Generate</a> -->
-                </div>
+                <h4 class="text-light font-weight-bold">{{movie.title}}</h4>
+                <!-- <a (click)="movieSelected(movie.id)" class="btn btn-primary">Generate</a> -->
             </div>
         </div>
     </div>
+</div>
+
+<div class="row">
+    <h1 class=" text-center font-weight-bold text-primary">Set Up Recommendations</h1>
+    <hr>
+    <div class="mt-2 col">
+        <div class="mt-2 row justify-content-center">
+            <h2 class="text-center col-2 ml-4 mr-3 text-primary font-weight-bold">Sad</h2>
+            <input class="col-3 my-1 mx-1" (keyup)="getValue(box.value)" type="text" #box placeholder="Enter genre(s)"
+                name="Sad">
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 class="text-center col-2 ml-4 mr-3 text-primary font-weight-bold">Stressed</h2>
+            <input class="col-3 my-1 mx-1" (keyup)="getValue1(box1.value)" type="text" #box1
+                placeholder="Enter genre(s)" name="Stressed">
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 class="text-center col-2 ml-4 mr-3 text-primary font-weight-bold">Joyful</h2>
+            <input class="col-3 my-1 mx-1" (keyup)="getValue2(box2.value)" type="text" #box2
+                placeholder="Enter genre(s)" name="Joyful">
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 class="text-center col-2 ml-4 mr-3 text-primary font-weight-bold">Thrilled</h2>
+            <input class="col-3 my-1 mx-1" (keyup)="getValue3(box3.value)" type="text" #box3
+                placeholder="Enter genre(s)" name="Thrilled">
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 class="text-center col-2 ml-4 mr-3 text-primary font-weight-bold">Upbeat</h2>
+            <input class="col-3 my-1 mx-1" (keyup)="getValue4(box4.value)" type="text" #box4
+                placeholder="Enter genre(s)" name="Upbeat">
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 class="text-center col-2 ml-4 mr-3 text-primary font-weight-bold">Calm</h2>
+            <input class="col-3 my-1 mx-1" (keyup)="getValue5(box5.value)" type="text" #box5
+                placeholder="Enter genre(s)" name="Calm">
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 class="text-center col-2 ml-4 mr-3 text-primary font-weight-bold">Bored</h2>
+            <input class="col-3 my-1 mx-1" (keyup)="getValue6(box6.value)" type="text" #box6
+                placeholder="Enter genre(s)" name="Bored">
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 class="text-center col-2 ml-4 mr-3 text-primary font-weight-bold">Cozy</h2>
+            <input class="col-3 my-1 mx-1" (keyup)="getValue7(box7.value)" type="text" #box7
+                placeholder="Enter genre(s)" name="Cozy">
+        </div>
+
+        <div class="row justify-content-center">
+            <h2 class="text-center col-2 ml-4 mr-3 text-primary font-weight-bold">Nostalgic</h2>
+            <input class="col-3 my-1 mx-1" (keyup)="getValue8(box8.value)" type="text" #box8
+                placeholder="Enter genre(s)" name="Nostalgic">
+        </div>
+    </div>
+
+    <div class="mt-3 col">
+        <p class="font-weight-bold text-light">Drama = 18</p>
+        <p class="font-weight-bold text-light">Adventure = 12</p>
+        <p class="font-weight-bold text-light">Family = 10751</p>
+        <p class="font-weight-bold text-light">Romance = 10749</p>
+        <p class="font-weight-bold text-light">Comedy = 35</p>
+        <p class="font-weight-bold text-light">Music = 10402</p>
+        <p class="font-weight-bold text-light">Animation = 16</p>
+        <p class="font-weight-bold text-light">Action = 28</p>
+        <p class="font-weight-bold text-light">Fantasy = 14</p>
+        <p class="font-weight-bold text-light">War = 10752</p>
+        <p class="font-weight-bold text-light">Western = 37</p>
+        <p class="font-weight-bold text-light">Science Fiction = 878</p>
+        <p class="font-weight-bold text-light">Documentary = 99</p>
+        <p class="font-weight-bold text-light">History = 36</p>
+    </div>
+</div>
 
 
 
