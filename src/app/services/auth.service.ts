@@ -118,7 +118,7 @@ export class AuthService {
             displayName_lower: user.displayName.toLowerCase(),
             email: user.email,
             email_lower: emailLower,
-            userID2: user.uUID
+            userID2: user.email//user.uUID
           });
 
         // result.user.sendEmailVerification();                    // immediately send the user a verification email
