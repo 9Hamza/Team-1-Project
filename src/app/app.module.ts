@@ -62,6 +62,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { FAQComponent } from './components/faq/faq.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { MoodformComponent } from './components/moodform/moodform.component';
 
 
 
@@ -79,7 +80,8 @@ import { ContactComponent } from './components/contact/contact.component';
     MoodComponent,
     SearchFunctionComponent,
     FAQComponent,
-    ContactComponent
+    ContactComponent,
+    MoodformComponent
   ],
   imports: [
     BrowserModule,
