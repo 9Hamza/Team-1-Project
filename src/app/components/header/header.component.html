@@ -1,42 +1,49 @@
 <header class="bg-feldgrau py-5">
-  <div *ngIf="!isdetail">
-    <div class="container px-5">
-      <div class="row gx-5 align-items-center justify-content-center">
-        <div class="col-lg-8 col-xl-7 col-xxl-6">
-          <div class="my-5 text-center text-xl-start">
-            <h1 class="display-5 fw-bolder text-white mb-2">Watch what you desire based on your mood!</h1>
-            <p class="lead fw-normal text-white-50 mb-4">Take a quick test that will customize your desired movies and
-              build the optimal recommendations for you.</p>
-            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-              <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-              <a class="btn btn-outline-light btn-lg px-4" routerLink="/faq">Learn More</a>
-            </div>
+  <!-- <div *ngIf="!isdetail"> -->
+  <div class="container px-5">
+    <div class="row gx-5 align-items-center justify-content-center">
+      <div class="col-lg-8 col-xl-7 col-xxl-6">
+        <div class="my-5 text-center text-xl-start">
+          <h1 class="display-5 fw-bolder text-white mb-2">Watch what you desire based on your mood!</h1>
+          <p class="lead fw-normal text-white-50 mb-4">Take a quick test that will customize your desired movies and
+            build the optimal recommendations for you.</p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+            <a class="btn btn-outline-light btn-lg px-4" routerLink="/faq">Learn More</a>
           </div>
-        </div>
-        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-          
-          <ul class="pic">
-            <p class="display-6 fw-bolder text-white mb-0">Recommended for you!</p>
-              {{getNowPlaying()}}
-              {{getPopular()}}
-              {{getUpcoming()}}
-              {{getTopRated()}}
-              <li><img class="1" src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[0].poster_path}}" alt="" width="200" height="317"></li>
-              <li><img class="1"src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[1].poster_path}}" alt="" width="200" height="317"></li>
-              <li><img class="1" src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[1].poster_path}}" alt="" width="200" height="317"></li>
-              <li><img class="1"src="{{'https://image.tmdb.org/t/p/w500'+moviesTop[0].poster_path}}" alt="" width="200" height="317"></li>
-              <li><img class="1"src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[1].poster_path}}" alt="" width="200" height="317"></li>
-          </ul>
         </div>
       </div>
     </div>
-    
+
+    <div class="text-center">
+      <ul class="pic">
+        <p class="display-6 fw-bolder text-white mb-0">Recommended for you!</p>
+        {{getNowPlaying()}}
+        {{getPopular()}}
+        {{getUpcoming()}}
+        {{getTopRated()}}
+        <li><img class="1" src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[0].poster_path}}" alt="" width="200"
+            height="317"></li>
+        <li><img class="1" src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[1].poster_path}}" alt="" width="200"
+            height="317"></li>
+        <li><img class="1" src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[1].poster_path}}" alt="" width="200"
+            height="317"></li>
+        <li><img class="1" src="{{'https://image.tmdb.org/t/p/w500'+moviesTop[0].poster_path}}" alt="" width="200"
+            height="317"></li>
+        <li><img class="1" src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[1].poster_path}}" alt="" width="200"
+            height="317"></li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- </div> -->
+
   <div class="container mt-5 mb-5">
-    <h2 style="color: white;">Now playing</h2>
+    <h2 style="color: white;">Now Playing</h2>
+
     <div class="card-deck">
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[0].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[0].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesNow[0].title}}</h4>
@@ -45,8 +52,7 @@
         <a (click)="getMovie(moviesNow[0].id)" class="btn btn-primary">Movie Details</a>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[1].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[1].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesNow[1].title}}</h4>
@@ -54,8 +60,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[2].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[2].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesNow[2].title}}</h4>
@@ -63,8 +68,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[3].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[3].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesNow[3].title}}</h4>
@@ -72,23 +76,21 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[4].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesNow[4].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesNow[4].title}}</h4>
           <p class="card-text"><small class="text-muted">{{moviesNow[4].vote_average}}</small></p>
         </div>
       </div>
-  
     </div>
+
   </div>
   <div class="container mt-5 mb-5">
-    <h2 style="color: white;">In theatres</h2>
+    <h2 style="color: white;">In Theatres</h2>
     <div class="card-deck">
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[0].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[0].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesUpcoming[0].title}}</h4>
@@ -96,8 +98,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[1].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[1].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesUpcoming[1].title}}</h4>
@@ -105,8 +106,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[2].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[2].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesUpcoming[2].title}}</h4>
@@ -114,8 +114,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[3].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[3].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesUpcoming[3].title}}</h4>
@@ -123,8 +122,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[4].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesUpcoming[4].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesUpcoming[4].title}}</h4>
@@ -137,8 +135,7 @@
     <h2 style="color: white;">Popular</h2>
     <div class="card-deck">
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[0].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[0].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesPopular[0].title}}</h4>
@@ -146,8 +143,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[1].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[1].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesPopular[1].title}}</h4>
@@ -155,8 +151,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[2].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[2].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesPopular[2].title}}</h4>
@@ -164,8 +159,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[3].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[3].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesPopular[3].title}}</h4>
@@ -173,8 +167,7 @@
         </div>
       </div>
       <div class="col-sm-2 border border-dark card">
-        <img class="card-img-top img-fluid"
-          src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[4].poster_path}}"
+        <img class="card-img-top img-fluid" src="{{'https://image.tmdb.org/t/p/w500'+moviesPopular[4].poster_path}}"
           alt="Card image cap" width="400" height="300">
         <div class="card-body">
           <h4 class="card-title font-RobotoMono">{{moviesPopular[4].title}}</h4>
@@ -183,8 +176,8 @@
       </div>
     </div>
   </div>
-  </div>
-  <div *ngIf="isdetail">
+
+  <!-- <div *ngIf="isdetail">
     <div class="container">
       <div id="movie" class="well">
           <div class="row">
@@ -236,5 +229,5 @@
           </div>
       </div>
     </div>
-  </div>
-  </header>
+  </div> -->
+</header>

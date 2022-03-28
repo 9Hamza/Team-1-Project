@@ -18,52 +18,69 @@ export class HeaderComponent implements OnInit {
   moviesUpcoming: any = [];
   moviesTop: any = [];
   providers: any = [];
-  casts: any=[];
+  casts: any = [];
   isdetail = false;
+  emptyMoviesNow = true;
+  emptyMoviesPopular = true;
+  emptyMoviesUpcoming = true;
+  emptyMoviesTop = true;
 
   constructor(private apiService: ApiCallsService, private router: Router) { }
 
-  ngOnInit(): void { }
-
-  getNowPlaying(){
-    this.apiService.searchNowPlaying().subscribe( (response:any) => {
-      this.moviesNow = response.results;
-      console.log(this.moviesNow)
-    })
-  }
-  getPopular(){
-    this.apiService.searchPopular().subscribe( (response:any) => {
-      this.moviesPopular = response.results;
-      console.log(this.moviesPopular)
-    })
+  ngOnInit(): void {
+    console.log(this.moviesNow.length);
   }
 
-  getUpcoming(){
-    this.apiService.searchUpcoming().subscribe( (response:any) => {
-      this.moviesUpcoming = response.results;
-      console.log(this.moviesPopular)
-    })
+  getNowPlaying() {
+    if (this.moviesNow.length == 0) { // If the array "moviesNow" is empty, fill it using this method
+      this.apiService.searchNowPlaying().subscribe((response: any) => {
+        this.moviesNow = response.results;
+        console.log(this.moviesNow);
+      })
+    }
   }
 
-  getTopRated(){
-    this.apiService.searchTopRated().subscribe( (response:any) => {
-      this.moviesTop = response.results;
-      console.log(this.moviesPopular)
-    })
+  getPopular() {
+    if (this.moviesPopular.length == 0) {
+      this.apiService.searchPopular().subscribe((response: any) => {
+        this.moviesPopular = response.results;
+        console.log(this.moviesPopular);
+      })
+    }
   }
+
+  getUpcoming() {
+    if (this.moviesUpcoming.length == 0) {
+      this.apiService.searchUpcoming().subscribe((response: any) => {
+        this.moviesUpcoming = response.results;
+        console.log(this.moviesPopular)
+      })
+    }
+
+  }
+
+  getTopRated() {
+    if (this.moviesTop.length == 0) {
+      this.apiService.searchTopRated().subscribe((response: any) => {
+        this.moviesTop = response.results;
+        console.log(this.moviesPopular)
+      })
+    }
+  }
+
   getMovie(id: number) {
-    this.apiService.movieDetails(id).subscribe( (response:any) => {
+    this.apiService.movieDetails(id).subscribe((response: any) => {
       this.movieSelected = response;
       this.isdetail = true;
     })
 
-    this.apiService.watchFeature(id).subscribe( (response:any) => {
+    this.apiService.watchFeature(id).subscribe((response: any) => {
       this.providers = response.results.US.buy;
     })
 
-    this.apiService.getCast(id).subscribe( (response:any) => {
+    this.apiService.getCast(id).subscribe((response: any) => {
       this.casts = response.cast;
       console.log(response);
     })
-    }
+  }
 }
