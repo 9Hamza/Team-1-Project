@@ -71,7 +71,6 @@ export class HeaderComponent implements OnInit {
   getMovie(id: number) {
     this.apiService.movieDetails(id).subscribe((response: any) => {
       this.movieSelected = response;
-      this.isdetail = true;
     })
 
     this.apiService.watchFeature(id).subscribe((response: any) => {
@@ -80,7 +79,6 @@ export class HeaderComponent implements OnInit {
 
     this.apiService.getCast(id).subscribe((response: any) => {
       this.casts = response.cast;
-      console.log(response);
     })
   }
 }

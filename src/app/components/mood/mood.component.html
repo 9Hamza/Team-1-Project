@@ -172,10 +172,24 @@
     <div class="row">
         <div class="my-2 col-4" style="width: 25% !important;" *ngFor="let movie of movies; let i = index ">
             <div class="well text-center">
-                <img class="rounded" src="{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}"
-                    onerror="this.onerror=null;this.src='NoImage.jpg';">
-                <h4 class="text-light font-weight-bold">{{movie.title}}</h4>
-                <!-- <a (click)="movieSelected(movie.id)" class="btn btn-primary">Generate</a> -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img class="card-img-top img-fluid"
+                      src="{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}"
+                      alt="Card image cap" style="width:233px;height:350px;">
+                      </div>
+                      <div class="flip-card-back">
+                        <h1>{{movie.title}}</h1>
+                        <h3>Overview</h3>
+                        <p class="module line-clamp" style="text-align: left;color: gray; font-size:x-small;">{{movie.overview}}</p>
+                        <h3>Release date</h3>
+                        <p style="color: gray;">{{movie.release_date}}</p>
+                        <h3>Vote Average</h3>
+                        <p style="color: gray;">{{movie.vote_average}}</p>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
