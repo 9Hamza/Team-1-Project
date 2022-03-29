@@ -1,10 +1,6 @@
 <!-- <div class="text-center"><button class="px-4 mt-4 btn btn-primary" routerLink="/mood">Set Up
         Recommendations</button></div> -->
 <div class="mb-4 centerplz">
-
- <div class="container">
-
-<div class="centerplz">
     <div *ngIf="canSeeMoods">
         <div class="row my-2"></div>
         <div class="my-2 text-center">
@@ -21,48 +17,9 @@
                         <!--<h1 style = "color:black">To get you in your feelings.</h1>-->
                         <div class="mb-1">
                             <button (click)=getGenres(sad) type="button" class="px-1 btn btn-primary">Recommend</button>
-        
-                
-
-                <div class="flip">
-                    <div class= "front" style="background-color:#3D1A25">            
-                            <h1>STRESSED</h1>
-                        </div> 
-                    <div class="back">
-                        <h1 style = "color:black">Comedy, Animation, Music.</h1>
-
-                        <!--<h1 style = "color:black">Feeling stressed? Here's relief</h1>-->
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
-
                         </div>
-<!--STARTTTT-->
-                        
-<div class="container">
-    <div class="interior">
-      <a class="btn" href="#open-modal">👋 Basic CSS-Only Modal</a>
-    </div>
-  </div>
-  <div id="open-modal" class="modal-window">
-    <div>
-      <a href="#" title="Close" class="modal-close">Close</a>
-      <h1>Voilà!</h1>
-      <div>A CSS-only modal based on the :target pseudo-class. Hope you find it helpful.</div>
-      <div><small>Check out</small></div>
-      <a href="https://aminoeditor.com" target="_blank">👉 Amino: Live CSS Editor for Chrome</div>
-    </div>
-
-
-
-  </div>
-
-
-
-
-<!--ENDDDDDD-->
                     </div>
                 </div>
-
 
                 <div class="flip">
                     <div class="front" style="background-color:#3D0814">
@@ -75,19 +32,6 @@
                         <div class="mb-1">
                             <button (click)=getGenres(stressed) type="button"
                                 class="px-1 btn btn-primary">Recommend</button>
-                    <div class= "front" style="background-color:#4067B5">            
-                            <h1>SAD</h1>
-                        </div> 
-                    <div class="back">
-                        <h1 style = "color:black">Adventure, Family, Romance.</h1>
-                        <!--<h1 style = "color:black">To get you in your feelings.</h1>-->
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
-
-                        </div>
-
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Customize</button>
                         </div>
                     </div>
                 </div>
@@ -96,9 +40,6 @@
                     <div class="front" style="background-color:#F5EBE0">
                         <h1 style="color:#2e5581">JOYFUL</h1>
                     </div>
-                    <div class= "front" style="background-color:#E1DEE0">            
-                            <h1 style= "color:#2e5581">JOYFUL</h1>
-                        </div> 
                     <div class="back">
                         <h1 style="color:black"> Action, Comedy, Fantasy.</h1>
                         <!--<h1 style = "color:black">Feeling stressed? Here's relief</h1>-->
@@ -107,14 +48,6 @@
                             <button (click)=getGenres(joyful) type="button"
                                 class="px-1 btn btn-primary">Recommend</button>
                         </div>
-                            <div class="mb-1">
-                                <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
-
-                            </div>
-
-                            <div class="mb-1">
-                                <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Customize</button>
-                            </div>
                     </div>
                 </div>
             </div>
@@ -130,9 +63,6 @@
                     <div class="front" style="background-color:#1F363D">
                         <h1>THRILLED</h1>
                     </div>
-                    <div class= "front" style="background-color:#3B4E57">            
-                            <h1>THRILLED</h1>
-                        </div> 
                     <div class="back">
                         <h1 style="color:black">Crime, Thriller, Horror.</h1>
 
@@ -142,16 +72,9 @@
 
                             <button (click)=getGenres(thrilled) type="button"
                                 class="px-1 btn btn-primary">Recommend</button>
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
-
-                        </div>
-
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Customize</button>
                         </div>
                     </div>
                 </div>
-
 
                 <div class="flip">
                     <div class="front" style="background-color:#cae9ff">
@@ -159,24 +82,13 @@
                     </div>
                     <div class="back">
                         <h1 style="color:black">Adventure, Music, Action.</h1>
-                    <div class= "front" style="background-color:#98BA9F">            
-                        <h1 style= "color:#2e5581">CALM</h1>
-                        </div> 
-                    <div class="back">
-                        <h1 style = "color:black">Documentary, Western, Science Fiction.</h1><!--We all need a chill day-->
 
+                        <!--<h1 style = "color:black">Your daily mood booster.</h1>-->
 
 
                         <div class="mb-1">
                             <button (click)=getGenres(upbeat) type="button"
                                 class="px-1 btn btn-primary">Recommend</button>
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
-
-                        </div>
-
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Customize</button>
                         </div>
                     </div>
                 </div>
@@ -191,28 +103,9 @@
                         <div class="mb-1">
                             <button (click)=getGenres(calm) type="button"
                                 class="px-1 btn btn-primary">Recommend</button>
-                    <div class= "front" style="background-color:#CFE7F9">            
-                        <h1 style= "color:black">UPBEAT</h1>
-                        </div> 
-                    <div class="back">
-                        <h1 style = "color:black">Adventure, Music, Action.</h1>
-
-                        <!--<h1 style = "color:black">Your daily mood booster.</h1>-->
-
-                        
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
-
                         </div>
-
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Customize</button>
-                        </div>
-
                     </div>
                 </div>
-
-
             </div>
 
 
@@ -228,9 +121,6 @@
                     <div class="front" style="background-color:#343d52">
                         <h1>BORED</h1>
                     </div>
-                    <div class= "front" style="background-color:#4A4A63">            
-                            <h1>BORED</h1>
-                        </div> 
                     <div class="back">
                         <h1 style="color:black">Drama, Mystery, Thriller. </h1>
                         <!--For all the couch potatoes.-->
@@ -238,12 +128,6 @@
 
                             <button (click)=getGenres(bored) type="button"
                                 class="px-1 btn btn-primary">Recommend</button>
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
-
-                        </div>
-
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Customize</button>
                         </div>
                     </div>
                 </div>
@@ -259,18 +143,6 @@
                         <div class="mb-1">
                             <button (click)=getGenres(cozy) type="button"
                                 class="px-1 btn btn-primary">Recommend</button>
-                    <div class= "front" style="background-color:#896F95">            
-                            <h1>NOSTALGIC</h1>
-                        </div> 
-                    <div class="back">
-                        <h1 style = "color:black">History, Western, Music. </h1> <!--Time for a trip to the past.-->
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
-
-                        </div>
-
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Customize</button>
                         </div>
                     </div>
                 </div>
@@ -285,25 +157,9 @@
                         <div class="mb-1">
                             <button (click)=getGenres(nostalgic) type="button"
                                 class="px-1 btn btn-primary">Recommend</button>
-                    <div class= "front" style="background-color:#BC7F69">            
-                            <h1>COZY</h1>
-                        </div> 
-                    <div class="back">
-                        <h1 style = "color:black">Family, Western, Romance. </h1><!--Here lies the path to warm and cozy.-->
-
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Recommend</button>
-
-                        </div>
-
-                        <div class="mb-1">
-                            <button (click)=getGenres(Stressed) type="button" class="px-1 btn btn-primary">Customize</button>
                         </div>
                     </div>
                 </div>
-
- 
-
             </div>
         </div>
     </div>
@@ -402,6 +258,6 @@
     </div>
 </div>
 
-</div>
+
 
 <div class="row my-4"></div>
