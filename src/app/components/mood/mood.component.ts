@@ -44,6 +44,12 @@ export class MoodComponent implements OnInit {
     console.log(this.movies);
   }
 
+  /*popup for user to customize their mood via genre selection*/
+
+
+/*get genre version of customization??????*/ 
+
+
   getGenres(text: string) {
     this.apiService.searchMoviesbyGenre(text).subscribe((response: any) => {
       this.movies = response.results;
